@@ -40,7 +40,6 @@ const IndexWater = () => {
           <Service />
           {/* SERVICE */}
           {/* NEWS */}
-          <News />
           {/* NEWS */}
           {/* CONTACT */}
           <Contact />

@@ -39,7 +39,6 @@ const Indexparticle = () => {
           <Service />
           {/* SERVICE */}
           {/* NEWS */}
-          <News />
           {/* NEWS */}
           {/* CONTACT */}
           <Contact />

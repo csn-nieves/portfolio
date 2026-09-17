@@ -51,7 +51,7 @@ const About = () => {
               <div className="left w-[40%]">
                 <p className="mb-[15px]">
                   Hello there! My name is <strong>Christopher Nieves.</strong> I
-                  am a software engineer, and I'm very passionate and dedicated
+                  am a software engineer, and I&apos;m very passionate and dedicated
                   to my work, bringing to life intriguing and ambitious
                   applications.
                 </p>

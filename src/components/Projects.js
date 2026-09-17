@@ -8,13 +8,9 @@ import { Detail, Soundcloud } from "./Popup";
 import { projects } from "../../data";
 import Project from "./Project";
 
+const ModalVideo = dynamic(() => import("react-modal-video"), { ssr: false });
+
 const Portfolio = () => {
-  const ModalVideo = dynamic(
-    () => {
-      return import("react-modal-video");
-    },
-    { ssr: false }
-  );
 
   // Isotope
   const isotope = useRef();
@@ -185,7 +181,7 @@ const Portfolio = () => {
                       <img
                         className="relative opacity-0 min-w-full"
                         src="assets/img/thumbs/1-1.jpg"
-                        alt
+                        alt=""
                       />
                       <div
                         className="main absolute inset-0 bg-no-repeat bg-cover bg-center grayscale"
@@ -217,7 +213,7 @@ const Portfolio = () => {
                       <img
                         className="relative opacity-0 min-w-full"
                         src="assets/img/thumbs/1-1.jpg"
-                        alt
+                        alt=""
                       />
                       <div
                         className="main absolute inset-0 bg-no-repeat bg-cover bg-center grayscale"
@@ -247,7 +243,7 @@ const Portfolio = () => {
                       <img
                         className="relative opacity-0 min-w-full"
                         src="assets/img/thumbs/1-1.jpg"
-                        alt
+                        alt=""
                       />
                       <div
                         className="main absolute inset-0 bg-no-repeat bg-cover bg-left-top grayscale"
@@ -276,7 +272,7 @@ const Portfolio = () => {
                       <img
                         className="relative opacity-0 min-w-full"
                         src="assets/img/thumbs/1-1.jpg"
-                        alt
+                        alt=""
                       />
                       <div
                         className="main absolute inset-0 bg-no-repeat bg-cover bg-center grayscale"
@@ -304,7 +300,7 @@ const Portfolio = () => {
                       <img
                         className="relative opacity-0 min-w-full"
                         src="assets/img/thumbs/1-1.jpg"
-                        alt
+                        alt=""
                       />
                       <div
                         className="main absolute inset-0 bg-no-repeat bg-cover bg-center"
@@ -377,7 +373,7 @@ const Portfolio = () => {
                                       <img
                                         className="svg"
                                         src="assets/img/svg/social/facebook.svg"
-                                        alt
+                                        alt=""
                                       />
                                     </a>
                                   </li>
@@ -386,7 +382,7 @@ const Portfolio = () => {
                                       <img
                                         className="svg"
                                         src="assets/img/svg/social/twitter.svg"
-                                        alt
+                                        alt=""
                                       />
                                     </a>
                                   </li>
@@ -395,7 +391,7 @@ const Portfolio = () => {
                                       <img
                                         className="svg"
                                         src="assets/img/svg/social/instagram.svg"
-                                        alt
+                                        alt=""
                                       />
                                     </a>
                                   </li>
@@ -412,7 +408,7 @@ const Portfolio = () => {
                                   <img
                                     className="relative opacity-0 min-w-full"
                                     src="assets/img/thumbs/4-2.jpg"
-                                    alt
+                                    alt=""
                                   />
                                   <div
                                     className="main absolute inset-0 bg-no-repeat bg-cover bg-center"
@@ -427,7 +423,7 @@ const Portfolio = () => {
                                   <img
                                     className="relative opacity-0 min-w-full"
                                     src="assets/img/thumbs/4-2.jpg"
-                                    alt
+                                    alt=""
                                   />
                                   <div
                                     className="main absolute inset-0 bg-no-repeat bg-cover bg-center"
@@ -442,7 +438,7 @@ const Portfolio = () => {
                                   <img
                                     className="relative opacity-0 min-w-full"
                                     src="assets/img/thumbs/4-2.jpg"
-                                    alt
+                                    alt=""
                                   />
                                   <div
                                     className="main absolute inset-0 bg-no-repeat bg-cover bg-center"

@@ -91,7 +91,7 @@ export const Detail = ({
               <div className="main_details w-full h-auto clear-both flex mb-[60px]">
                 <div className="textbox w-[70%] pr-[40px]">
                   {summaries.map((summary) => (
-                    <p className="mb-[15px]">{summary.summary}</p>
+                    <p key={summary.summary} className="mb-[15px]">{summary.summary}</p>
                   ))}
                 </div>
                 {/* <div className="detailbox w-[30%] pl-[40px]">

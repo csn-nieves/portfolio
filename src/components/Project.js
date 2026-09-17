@@ -38,7 +38,7 @@ const Project = ({
           <img
             className="relative opacity-0 min-w-full"
             src="assets/img/thumbs/1-1.jpg"
-            alt
+            alt=""
           />
           <div
             className="main absolute inset-0 bg-no-repeat bg-cover bg-center grayscale"
