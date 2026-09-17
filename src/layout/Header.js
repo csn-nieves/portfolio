@@ -1,8 +1,4 @@
 import { Fragment, useContext, useState } from "react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 import { CavaniContext } from "../Context";
 import Link from "next/link";
 
