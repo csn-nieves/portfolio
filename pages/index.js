@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
-import Modal from "react-modal";
-import { useEffect, useState } from "react";
+import Link from "next/link";
+import { ArrowIcon, PortfolioHead, SiteFooter, SiteHeader } from "../components/PortfolioChrome";
 import { projects } from "../data";
 
 const selectedProjects = [...projects].sort(
@@ -22,40 +22,7 @@ const technologyName = (path) => {
   return techNames[name] || name;
 };
 
-function ArrowIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true" fill="none">
-      <path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function SiteHeader() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const closeMenu = () => setMenuOpen(false);
-  return (
-    <header className="site-header page-width" id="top">
-      <a className="site-mark" href="#top" onClick={closeMenu} aria-label="Christopher Nieves, back to top">CN</a>
-      <button
-        type="button"
-        className="menu-toggle"
-        aria-expanded={menuOpen}
-        aria-controls="site-navigation"
-        onClick={() => setMenuOpen((open) => !open)}
-      >
-        <span>{menuOpen ? "Close" : "Menu"}</span>
-        <span className="menu-lines" aria-hidden="true"><span /><span /><span /></span>
-      </button>
-      <nav className={menuOpen ? "site-nav is-open" : "site-nav"} id="site-navigation" aria-label="Main navigation">
-        <a href="#work" onClick={closeMenu}>Work</a>
-        <a href="#about" onClick={closeMenu}>About</a>
-        <a href="#contact" onClick={closeMenu}>Contact</a>
-      </nav>
-    </header>
-  );
-}
-
-function ProjectRow({ project, index, onOpen }) {
+function ProjectRow({ project, index }) {
   const image = project.imageSize;
   return (
     <article className={`project-row ${index % 2 ? "project-row-reverse" : ""}`}>
@@ -76,64 +43,19 @@ function ProjectRow({ project, index, onOpen }) {
             {project.stack.map((tech) => <li key={tech}>{technologyName(tech)}</li>)}
           </ul>
         )}
-        <button type="button" className="text-action" onClick={() => onOpen(project)}>
+        <Link href={`/work/${project.slug}`} className="text-action">
           View project <ArrowIcon />
-        </button>
+        </Link>
       </div>
     </article>
   );
 }
 
-function ProjectDialog({ project, onClose }) {
-  if (!project) return null;
-  const image = project.imageSize;
-  return (
-    <Modal
-      isOpen
-      onRequestClose={onClose}
-      contentLabel={`${project.name} project details`}
-      className="work-dialog"
-      overlayClassName="work-dialog-overlay"
-      closeTimeoutMS={200}
-    >
-      <div className="dialog-topline">
-        <span>Project details</span>
-        <button type="button" onClick={onClose} aria-label="Close project details">Close <span aria-hidden="true">×</span></button>
-      </div>
-      <div className="dialog-body">
-        <h2>{project.name}</h2>
-        <div className="dialog-image">
-          <Image src={`/${project.mainImage}`} width={image.width} height={image.height} alt={`${project.name} project screenshot`} sizes="(max-width: 760px) 90vw, 780px" />
-        </div>
-        {project.summaries.map(({ summary }) => <p key={summary}>{summary}</p>)}
-        {project.stack.length > 0 && (
-          <ul className="project-tech" aria-label="Technologies">
-            {project.stack.map((tech) => <li key={tech}>{technologyName(tech)}</li>)}
-          </ul>
-        )}
-      </div>
-    </Modal>
-  );
-}
-
 export default function HomePage() {
-  const [activeProject, setActiveProject] = useState(null);
-  useEffect(() => {
-    Modal.setAppElement("#__next");
-  }, []);
-
   return (
     <div className="portfolio-site">
-      <Head>
-        <title>Christopher Nieves | Software Engineer</title>
-        <meta name="description" content="Christopher Nieves is a software engineer. Explore selected web projects and get in touch." />
-        <meta name="author" content="Christopher Nieves" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
-      </Head>
-      <SiteHeader />
+      <Head><PortfolioHead title="Christopher Nieves | Software Engineer" description="Christopher Nieves is a software engineer. Explore selected web projects and get in touch." /></Head>
+      <SiteHeader home />
       <main>
         <section className="hero page-width" aria-labelledby="hero-title">
           <div className="hero-copy">
@@ -157,7 +79,7 @@ export default function HomePage() {
           <h2 id="work-title">Selected work</h2>
           <div className="project-list">
             {selectedProjects.map((project, index) => (
-              <ProjectRow key={project.name} project={project} index={index} onOpen={setActiveProject} />
+              <ProjectRow key={project.name} project={project} index={index} />
             ))}
           </div>
         </section>
@@ -199,11 +121,7 @@ export default function HomePage() {
           </div>
         </section>
       </main>
-      <footer className="site-footer page-width">
-        <span>© {new Date().getFullYear()} Christopher Nieves</span>
-        <a href="#top">Back to top ↑</a>
-      </footer>
-      <ProjectDialog project={activeProject} onClose={() => setActiveProject(null)} />
+      <SiteFooter home />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 export const projects = [
   {
     name: "Contracted Site",
+    slug: "contracted-site",
     displayOrder: 3,
     imageSize: { width: 769, height: 773 },
     description:
@@ -14,15 +15,21 @@ export const projects = [
   },
   {
     name: "Candy Co.",
+    slug: "candy-co",
     displayOrder: 1,
     imageSize: { width: 1881, height: 866 },
     description:
       "A mock online candy store.",
     mainImage: "assets/img/projects/candyco-homepage.png",
+    gallery: [
+      { src: "/assets/img/projects/candyco1.png", width: 1710, height: 835, alt: "Candy Co. product listing with Add to Cart buttons", caption: "Product listing" },
+      { src: "/assets/img/projects/candyco2.png", width: 1708, height: 829, alt: "Candy Co. sign-in form", caption: "Sign-in screen" },
+      { src: "/assets/img/projects/candyco3.png", width: 1707, height: 826, alt: "Candy Co. checkout and shipping form", caption: "Checkout layout" },
+    ],
     img1: "",
     img2: "",
     img3: "",
-    summaries: [{ summary: 'A mock e-commerce project for a candy store. The project uses React, Redux, Sequelize, Stripe, and Tailwind CSS.' }],
+    summaries: [{ summary: 'The mock storefront includes a promotional homepage, product listing, sign-in screen, and checkout layout.' }],
     stack: [
       "/assets/img/svg/react.svg",
       "/assets/img/svg/redux.svg",
@@ -33,6 +40,7 @@ export const projects = [
   },
   {
     name: "Fitness-TS",
+    slug: "fitness-ts",
     displayOrder: 2,
     imageSize: { width: 1902, height: 943 },
     description:
@@ -41,7 +49,7 @@ export const projects = [
     img1: "",
     img2: "",
     img3: "",
-    summaries: [{ summary: 'A mock gym website built with TypeScript, React, and Tailwind CSS.' }],
+    summaries: [{ summary: 'The landing page introduces the gym and its fitness offering.' }],
     stack: [
       "/assets/img/svg/typescript.svg",
       "/assets/img/svg/react.svg",
@@ -50,6 +58,7 @@ export const projects = [
   },
   {
     name: "Flock",
+    slug: "flock",
     displayOrder: 0,
     imageSize: { width: 1901, height: 879 },
     description:
@@ -58,7 +67,7 @@ export const projects = [
     img1: "",
     img2: "",
     img3: "",
-    summaries: [{ summary: 'A progressive web app concept that helps runners discover group run events. The project uses React, Redux, Sequelize, Socket.io, and Leaflet.' }],
+    summaries: [{ summary: 'The concept brings group run events into one place for runners to explore.' }],
     stack: [
       "/assets/img/svg/react.svg",
       "/assets/img/svg/redux.svg",
