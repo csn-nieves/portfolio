@@ -72,7 +72,7 @@ export const customCursor = () => {
           function () {
             let a = document.querySelectorAll("a"),
               sliders = document.querySelectorAll(
-                ".owl-carousel, .swiper-container, .cursor-link"
+                ".owl-carousel, .cursor-link"
               ),
               slider = document.querySelectorAll(".modal_item");
             e.classList.add("cursor-inner"), t.classList.add("cursor-outer");

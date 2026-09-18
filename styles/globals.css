@@ -52,16 +52,6 @@
   text-align: center;
 }
 
-.CircularProgressbar {
-  width: 100%;
-  vertical-align: middle;
-}
-
-.CircularProgressbar {
-  height: auto;
-  margin-bottom: 8px;
-}
-
 @keyframes modal-video {
   from {
     opacity: 0;

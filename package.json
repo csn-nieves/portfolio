@@ -18,13 +18,10 @@
     "next": "^16.3.5",
     "particles.js": "^2.0.0",
     "react": "^18.3.1",
-    "react-circular-progressbar": "^2.2.0",
     "react-dom": "^18.3.1",
     "react-modal": "^3.16.3",
     "react-modal-video": "^2.0.2",
-    "react-tabs": "^6.1.1",
     "react-water-wave": "^2.0.1",
-    "swiper": "^14.2.0",
     "typed.js": "^3.0.0"
   },
   "devDependencies": {
