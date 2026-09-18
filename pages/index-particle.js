@@ -2,7 +2,6 @@ import { CavaniContext } from "@/src/Context";
 import About from "@/src/components/About";
 import Contact from "@/src/components/Contact";
 // import News from "@/src/components/News";
-import Service from "@/src/components/Service";
 import Layout from "@/src/layout/Layout";
 import dynamic from "next/dynamic";
 import { useContext, useEffect } from "react";
@@ -36,7 +35,6 @@ const Indexparticle = () => {
           <Portfolio />
           {/* /PORTFOLIO */}
           {/* SERVICE */}
-          <Service />
           {/* SERVICE */}
           {/* NEWS */}
           {/* NEWS */}

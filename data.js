@@ -1,42 +1,35 @@
 export const projects = [
   {
     name: "Contracted Site",
+    slug: "contracted-site",
+    displayOrder: 3,
+    imageSize: { width: 769, height: 773 },
     description:
-      "Website for a photographer to showcase their work as well as sell videograpy and photography resources. Currently waiting on products and descriptions from client",
+      "A portfolio and storefront concept for a photographer, with space to showcase work and sell photography and video resources.",
     mainImage: "assets/img/projects/Brandon.png",
     img1: "",
     img2: "",
     img3: "",
-    summaries: [
-      {
-        summary:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit sagittis ipsum, eu maximus ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent commodo feugiat nisi, a eleifend dolor dapibus nec. Aenean nec diam a felis ultrices dapibus quis at purus. Curabitur commodo aliquet nulla, vitae ultricies enim. Fusce id.",
-      },
-      {
-        summary:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tellus dolor, dictum vitae lectus ut, rhoncus egestas tortor. Cras id sapien consequat, imperdiet mauris quis, varius risus. Ut ut magna sed nunc mattis vulputate. Aliquam in lacus sagittis, ullamcorper orci.",
-      },
-    ],
+    summaries: [{ summary: 'The site is designed to present a photographer\'s work and offer photography and video resources. The project combines a portfolio presentation with a planned storefront.' }],
     stack: [],
   },
   {
     name: "Candy Co.",
+    slug: "candy-co",
+    displayOrder: 1,
+    imageSize: { width: 1881, height: 866 },
     description:
-      "Mock e-commerce website providing you with any and all of your sweet tooth needs",
+      "A mock online candy store.",
     mainImage: "assets/img/projects/candyco-homepage.png",
+    gallery: [
+      { src: "/assets/img/projects/candyco1.png", width: 1710, height: 835, alt: "Candy Co. product listing with Add to Cart buttons", caption: "Product listing" },
+      { src: "/assets/img/projects/candyco2.png", width: 1708, height: 829, alt: "Candy Co. sign-in form", caption: "Sign-in screen" },
+      { src: "/assets/img/projects/candyco3.png", width: 1707, height: 826, alt: "Candy Co. checkout and shipping form", caption: "Checkout layout" },
+    ],
     img1: "",
     img2: "",
     img3: "",
-    summaries: [
-      {
-        summary:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit sagittis ipsum, eu maximus ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent commodo feugiat nisi, a eleifend dolor dapibus nec. Aenean nec diam a felis ultrices dapibus quis at purus. Curabitur commodo aliquet nulla, vitae ultricies enim. Fusce id.",
-      },
-      {
-        summary:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tellus dolor, dictum vitae lectus ut, rhoncus egestas tortor. Cras id sapien consequat, imperdiet mauris quis, varius risus. Ut ut magna sed nunc mattis vulputate. Aliquam in lacus sagittis, ullamcorper orci.",
-      },
-    ],
+    summaries: [{ summary: 'The mock storefront includes a promotional homepage, product listing, sign-in screen, and checkout layout.' }],
     stack: [
       "/assets/img/svg/react.svg",
       "/assets/img/svg/redux.svg",
@@ -47,22 +40,16 @@ export const projects = [
   },
   {
     name: "Fitness-TS",
+    slug: "fitness-ts",
+    displayOrder: 2,
+    imageSize: { width: 1902, height: 943 },
     description:
-      "Mock gym website empowering you to be the very best version of yourself!",
+      "A mock gym website built with TypeScript, React, and Tailwind CSS.",
     mainImage: "assets/img/projects/fitness-homepage.png",
     img1: "",
     img2: "",
     img3: "",
-    summaries: [
-      {
-        summary:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit sagittis ipsum, eu maximus ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent commodo feugiat nisi, a eleifend dolor dapibus nec. Aenean nec diam a felis ultrices dapibus quis at purus. Curabitur commodo aliquet nulla, vitae ultricies enim. Fusce id.",
-      },
-      {
-        summary:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tellus dolor, dictum vitae lectus ut, rhoncus egestas tortor. Cras id sapien consequat, imperdiet mauris quis, varius risus. Ut ut magna sed nunc mattis vulputate. Aliquam in lacus sagittis, ullamcorper orci.",
-      },
-    ],
+    summaries: [{ summary: 'The landing page introduces the gym and its fitness offering.' }],
     stack: [
       "/assets/img/svg/typescript.svg",
       "/assets/img/svg/react.svg",
@@ -71,22 +58,16 @@ export const projects = [
   },
   {
     name: "Flock",
+    slug: "flock",
+    displayOrder: 0,
+    imageSize: { width: 1901, height: 879 },
     description:
-      "A progressive web app that aims to be the one stop shop for runners looking for group run events",
+      "A progressive web app concept for finding group runs.",
     mainImage: "assets/img/projects/flock-app.png",
     img1: "",
     img2: "",
     img3: "",
-    summaries: [
-      {
-        summary:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit sagittis ipsum, eu maximus ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent commodo feugiat nisi, a eleifend dolor dapibus nec. Aenean nec diam a felis ultrices dapibus quis at purus. Curabitur commodo aliquet nulla, vitae ultricies enim. Fusce id.",
-      },
-      {
-        summary:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tellus dolor, dictum vitae lectus ut, rhoncus egestas tortor. Cras id sapien consequat, imperdiet mauris quis, varius risus. Ut ut magna sed nunc mattis vulputate. Aliquam in lacus sagittiimg/s, ullamcorper orci.",
-      },
-    ],
+    summaries: [{ summary: 'The concept brings group run events into one place for runners to explore.' }],
     stack: [
       "/assets/img/svg/react.svg",
       "/assets/img/svg/redux.svg",

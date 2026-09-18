@@ -15,7 +15,6 @@ const Project = ({
   const toggle = () => {
     setModalOpen(!modalOpen);
   };
-  console.log("🚀summaries🚀", summaries);
 
   return (
     <li
@@ -24,7 +23,7 @@ const Project = ({
     >
       <Detail
         isOpen={modalOpen}
-        toggleModal={setModalOpen}
+        toggleModal={() => setModalOpen(false)}
         name={name}
         summaries={summaries}
         mainImage={mainImage}

@@ -33,9 +33,9 @@ const About = () => {
                   applications.
                 </p>
                 <p>
-                  With 2 years experience as a software engineer, I have
-                  acquired the skills and knowledge necessary to make your
-                  project a success.
+                  My work includes web applications and projects built with React,
+                  TypeScript, and other tools. You can explore a selection in
+                  the Projects section.
                 </p>
               </div>
               <div className="right w-[50%]">
@@ -63,9 +63,9 @@ const About = () => {
                     <span className="second inline-block">
                       <a
                         className="text-[#7d7789] transition-all duration-300 hover:text-[#333]"
-                        href="#"
+                        href="mailto:csn.nieves@gmail.com"
                       >
-                        nievescs20@gmail.com
+                        csn.nieves@gmail.com
                       </a>
                     </span>
                   </li>
@@ -76,7 +76,7 @@ const About = () => {
                     <span className="second inline-block">
                       <a
                         href="https://www.linkedin.com/in/christophernieves20"
-                        target="_blank"
+                        target="_blank" rel="noopener noreferrer"
                       >
                         christophernieves20
                       </a>
@@ -87,8 +87,8 @@ const About = () => {
                       GitHub:
                     </span>
                     <span className="second inline-block">
-                      <a href="https://github.com/Nievescs20" target="_blank">
-                        nievescs20
+                      <a href="https://github.com/csn-nieves" target="_blank" rel="noopener noreferrer">
+                        csn-nieves
                       </a>
                     </span>
                   </li>
@@ -110,7 +110,7 @@ const About = () => {
                       Software Development
                     </li>
                     <li className="mb-[8px] w-full float-left relative pl-[25px]">
-                      Web Developement
+                      Web Development
                     </li>
                   </ul>
                 </div>
@@ -127,10 +127,10 @@ const About = () => {
                       Soccer
                     </li>
                     <li className="mb-[8px] w-full float-left relative pl-[25px]">
-                      Rock Climbing
+                      Running
                     </li>
                     <li className="mb-[8px] w-full float-left relative pl-[25px]">
-                      Running
+                      Rock Climbing
                     </li>
                   </ul>
                 </div>
