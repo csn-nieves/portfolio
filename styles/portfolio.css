@@ -24,6 +24,8 @@ body:has(.portfolio-site) { margin: 0; background: var(--portfolio-paper); }
 .portfolio-site img { display: block; max-width: 100%; }
 .portfolio-site :focus-visible { outline: 3px solid var(--portfolio-teal); outline-offset: 4px; }
 .portfolio-site .page-width { width: min(100% - 112px, 1264px); margin-inline: auto; }
+.skip-link { position: absolute; z-index: 20; top: -100px; left: 0; padding: 10px 14px; background: var(--portfolio-paper); border: 2px solid var(--portfolio-teal); color: var(--portfolio-teal) !important; font-family: Archivo, sans-serif; font-size: 16px; font-weight: 700; }
+.skip-link:focus { top: 10px; }
 .site-header {
   height: 76px;
   display: flex;
@@ -127,7 +129,7 @@ body:has(.portfolio-site) { margin: 0; background: var(--portfolio-paper); }
 .profile-links a, .contact-link { display: inline-flex; align-items: center; gap: 8px; color: var(--portfolio-teal) !important; font-family: Archivo, sans-serif; font-size: 17px; font-weight: 700; }
 .contact-link { font-size: clamp(20px, 2vw, 28px); overflow-wrap: anywhere; }
 .site-footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 22px 30px; border-top: 1px solid var(--portfolio-rule); color: var(--portfolio-quiet); font-size: 15px; }
-.site-footer a { color: var(--portfolio-ink); }
+.site-footer a { display: inline-flex; align-items: center; min-height: 44px; color: var(--portfolio-ink); }
 @media (max-width: 900px) {
   .portfolio-site .page-width { width: min(100% - 48px, 1264px); }
   .hero { min-height: 450px; grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); gap: 18px; }

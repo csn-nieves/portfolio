@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon, PortfolioHead, SiteFooter, SiteHeader } from "../components/PortfolioChrome";
@@ -54,9 +53,9 @@ function ProjectRow({ project, index }) {
 export default function HomePage() {
   return (
     <div className="portfolio-site">
-      <Head><PortfolioHead title="Christopher Nieves | Software Engineer" description="Christopher Nieves is a software engineer. Explore selected web projects and get in touch." /></Head>
+      <PortfolioHead title="Christopher Nieves | Software Engineer" description="Christopher Nieves is a software engineer. Explore selected web projects and get in touch." />
       <SiteHeader home />
-      <main>
+      <main id="main-content">
         <section className="hero page-width" aria-labelledby="hero-title">
           <div className="hero-copy">
             <h1 id="hero-title">Christopher{" "}<br />Nieves</h1>

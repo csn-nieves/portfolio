@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon, PortfolioHead, SiteFooter, SiteHeader } from "../../components/PortfolioChrome";
@@ -35,11 +34,9 @@ export default function ProjectPage({ project, nextProject }) {
   const summary = project.summaries[0]?.summary;
   return (
     <div className="portfolio-site project-page">
-      <Head>
-        <PortfolioHead title={`${project.name} | Christopher Nieves`} description={project.description} />
-      </Head>
+      <PortfolioHead title={`${project.name} | Christopher Nieves`} description={project.description} />
       <SiteHeader />
-      <main className="page-width project-detail">
+      <main className="page-width project-detail" id="main-content">
         <Link href="/#work" className="project-back">← All work</Link>
         <header className="project-detail-header">
           <p className="project-eyebrow">Selected work</p>

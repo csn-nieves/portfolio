@@ -1,6 +1,6 @@
 # Portfolio design direction
 
-Status: Stage 3 implemented on the main `/` route. This document records the visual system and the remaining direction for later stages.
+Status: Stages 3–5 implemented. This document records the visual system and content constraints for future updates.
 
 ## Purpose and audience
 
@@ -55,4 +55,4 @@ Project detail presentation belongs to Stage 4. Stage 3 should keep the current 
 
 ## Implementation boundary
 
-Stage 2 produced the direction and wireframes. Stage 3 implements the scrollable home/work structure and responsive visual system on `/`. Stage 4 will expand project stories and supporting sections; Stage 5 will verify polish and accessibility. See [wireframes](docs/wireframes.md) for the proposed desktop and mobile composition.
+Stage 2 produced the direction and wireframes. Stage 3 implemented the scrollable homepage, Stage 4 added project pages, and Stage 5 verified responsive layout, keyboard navigation, and accessibility. See [wireframes](docs/wireframes.md) for the original desktop and mobile composition.
