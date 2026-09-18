@@ -1,6 +1,8 @@
 export const projects = [
   {
     name: "Contracted Site",
+    displayOrder: 3,
+    imageSize: { width: 769, height: 773 },
     description:
       "A portfolio and storefront concept for a photographer, with space to showcase work and sell photography and video resources.",
     mainImage: "assets/img/projects/Brandon.png",
@@ -12,6 +14,8 @@ export const projects = [
   },
   {
     name: "Candy Co.",
+    displayOrder: 1,
+    imageSize: { width: 1881, height: 866 },
     description:
       "A mock online candy store.",
     mainImage: "assets/img/projects/candyco-homepage.png",
@@ -29,6 +33,8 @@ export const projects = [
   },
   {
     name: "Fitness-TS",
+    displayOrder: 2,
+    imageSize: { width: 1902, height: 943 },
     description:
       "A mock gym website built with TypeScript, React, and Tailwind CSS.",
     mainImage: "assets/img/projects/fitness-homepage.png",
@@ -44,6 +50,8 @@ export const projects = [
   },
   {
     name: "Flock",
+    displayOrder: 0,
+    imageSize: { width: 1901, height: 879 },
     description:
       "A progressive web app concept for finding group runs.",
     mainImage: "assets/img/projects/flock-app.png",

@@ -18,7 +18,7 @@ const Contact = () => {
                     src="assets/img/svg/location.svg"
                     alt="image"
                   />
-                  <span className="block">Saratoga, NY</span>
+                  <span className="block">Saratoga Springs, NY</span>
                 </div>
               </li>
               <li className="mb-[30px] w-1/3 pl-[30px]">
