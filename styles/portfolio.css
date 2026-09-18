@@ -111,16 +111,29 @@ body:has(.portfolio-site) { margin: 0; background: var(--portfolio-paper); }
 .about-story p { position: relative; max-width: 29ch; margin: 34px 0 0; font-size: clamp(23px, 2.2vw, 30px); line-height: 1.32; }
 .about-story p + p { margin-top: 18px; color: var(--portfolio-quiet); font-size: 19px; line-height: 1.45; }
 .about-details { align-self: center; }
-.about-facts { margin: 0; }
-.about-facts div { display: grid; grid-template-columns: 150px 1fr; gap: 22px; padding: 22px 0; border-bottom: 1px solid var(--portfolio-rule); }
-.about-facts div:first-child { border-top: 1px solid var(--portfolio-rule); }
-.about-facts dt, .about-list h3 { color: var(--portfolio-quiet); font-family: Archivo, sans-serif; font-size: 16px; font-weight: 500; }
-.about-facts dd { margin: 0; font-family: Archivo, sans-serif; font-size: 20px; font-weight: 600; line-height: 1.3; }
+.about-list h3 { color: var(--portfolio-quiet); font-family: Archivo, sans-serif; font-size: 16px; font-weight: 500; }
 .about-list { padding: 28px 0 0; }
+.about-location { padding-top: 0; }
 .about-list h3 { margin: 0 0 16px; }
 .about-list ul { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 0; padding: 0; list-style: none; font-family: Archivo, sans-serif; font-size: 18px; font-weight: 600; }
 .about-list p { margin: 0; font-family: Archivo, sans-serif; font-size: 18px; font-weight: 600; }
-.about-interests { margin-top: 26px; border-top: 1px solid var(--portfolio-rule); }
+.about-list + .about-list { margin-top: 26px; border-top: 1px solid var(--portfolio-rule); }
+.journey-section { padding-block: 76px 96px; border-top: 1px solid var(--portfolio-rule); scroll-margin-top: 32px; }
+.journey-heading { margin-bottom: 56px; }
+.journey-kicker { margin: 0; color: var(--portfolio-teal); font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+.journey-heading h2 { margin: 16px 0 0; font-family: Archivo, sans-serif; font-size: clamp(46px, 5vw, 68px); font-weight: 800; letter-spacing: -.065em; line-height: 1.02; }
+.journey-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(48px, 8vw, 120px); }
+.journey-column h3 { margin: 0 0 28px; padding-bottom: 15px; border-bottom: 1px solid var(--portfolio-rule); color: var(--portfolio-quiet); font-family: Archivo, sans-serif; font-size: 18px; font-weight: 600; }
+.journey-list { position: relative; margin: 0; padding: 0 0 0 28px; list-style: none; }
+.journey-list::before { content: ""; position: absolute; top: 9px; bottom: 9px; left: 5px; width: 1px; background: var(--portfolio-rule); }
+.journey-list li { position: relative; padding: 0 0 40px; }
+.journey-list li:last-child { padding-bottom: 0; }
+.journey-list li::before { content: ""; position: absolute; top: 7px; left: -28px; width: 11px; height: 11px; border: 2px solid var(--portfolio-teal); border-radius: 50%; background: var(--portfolio-paper); }
+.journey-time { display: block; margin-bottom: 10px; color: var(--portfolio-teal); font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 500; }
+.journey-list h4 { margin: 0; font-family: Archivo, sans-serif; font-size: clamp(23px, 2.4vw, 32px); font-weight: 700; letter-spacing: -.04em; line-height: 1.15; }
+.journey-company { display: inline-flex; align-items: center; gap: 5px; min-height: 36px; margin-top: 5px; color: var(--portfolio-teal) !important; font-family: Archivo, sans-serif; font-size: 18px; font-weight: 700; }
+.journey-company:hover { text-decoration: underline; text-underline-offset: 4px; }
+.journey-list p { max-width: 32ch; margin: 9px 0 0; color: var(--portfolio-quiet); font-size: 18px; line-height: 1.4; }
 .contact-feature { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 72px; padding-block: 45px 75px; border-top: 1px solid var(--portfolio-rule); scroll-margin-top: 32px; }
 .contact-feature h2 { font-size: clamp(48px, 5vw, 68px); }
 .contact-feature p { margin: 16px 0 0; color: var(--portfolio-quiet); font-size: 20px; }
@@ -136,8 +149,6 @@ body:has(.portfolio-site) { margin: 0; background: var(--portfolio-paper); }
   .hero h1 { font-size: clamp(60px, 8vw, 90px); }
   .hero-portrait { max-width: 360px; }
   .about-feature { gap: 36px; }
-  .about-facts div { grid-template-columns: 105px 1fr; gap: 14px; }
-  .about-facts dd { font-size: 17px; }
   .project-row, .project-row-reverse { grid-template-columns: 1.25fr .75fr; gap: 24px; }
   .project-row-reverse { grid-template-columns: .75fr 1.25fr; }
 }
@@ -177,10 +188,14 @@ body:has(.portfolio-site) { margin: 0; background: var(--portfolio-paper); }
   .about-story p { margin-top: 26px; font-size: 24px; }
   .about-story p + p { margin-top: 16px; font-size: 18px; }
   .about-details { margin-top: 42px; }
-  .about-facts div { grid-template-columns: 108px 1fr; gap: 12px; padding: 20px 0; }
-  .about-facts dt { font-size: 14px; }
-  .about-facts dd { font-size: 16px; }
   .about-list ul, .about-list p { font-size: 16px; }
+  .journey-section { padding-block: 64px 72px; }
+  .journey-heading { margin-bottom: 38px; }
+  .journey-heading h2 { font-size: clamp(43px, 11vw, 60px); }
+  .journey-columns { display: block; }
+  .journey-column + .journey-column { margin-top: 54px; }
+  .journey-column h3 { margin-bottom: 24px; }
+  .journey-list h4 { font-size: 26px; }
   .contact-feature { display: block; padding-block: 44px 65px; }
   .contact-feature h2 { font-size: 48px; }
   .contact-feature p { font-size: 19px; }

@@ -12,7 +12,7 @@ Status: Stage 2 proposal. These are content and layout guides, not pixel-perfect
 │  Christopher                                                              │
 │  Nieves                               ┌──────────────────────────────┐    │
 │                                      │ grayscale portrait, smaller  │    │
-│  Software engineer                   │ than the current split pane  │    │
+│  Software Engineer                   │ than the current split pane  │    │
 │  Building web applications.          │                              │    │
 │                                      └──────────────────────────────┘    │
 │  View selected work  →       Email me                                    │
@@ -48,7 +48,7 @@ The top of the first project should be visible without navigating to another pan
 ├──────────────────────────────┤
 │ Christopher                  │
 │ Nieves                       │
-│ Software engineer            │
+│ Software Engineer            │
 │ Building web applications.   │
 │                              │
 │ View selected work  →        │

@@ -86,14 +86,12 @@ export default function HomePage() {
           <div className="about-story">
             <h2 id="about-title">About{" "}<br />Christopher</h2>
             <p>I studied physics and chemistry at SUNY Potsdam, then trained at Fullstack Academy before working as a software engineer.</p>
-            <p>My work has included software development and web applications. The projects above show some of my earlier work.</p>
           </div>
           <div className="about-details">
-            <dl className="about-facts">
-              <div><dt>Based in</dt><dd>Saratoga Springs, NY</dd></div>
-              <div><dt>Background</dt><dd>SUNY Potsdam · Fullstack Academy</dd></div>
-              <div><dt>Most recent role</dt><dd>Software engineer</dd></div>
-            </dl>
+            <div className="about-list about-location">
+              <h3>Based in</h3>
+              <p>Saratoga Springs, NY</p>
+            </div>
             <div className="about-list">
               <h3>Skills</h3>
               <ul>
@@ -102,7 +100,39 @@ export default function HomePage() {
             </div>
             <div className="about-list about-interests">
               <h3>Outside work</h3>
-              <p>Running · Rock climbing · Soccer</p>
+              <p>Soccer · Running · Rock Climbing</p>
+            </div>
+          </div>
+        </section>
+        <section className="journey-section page-width" id="journey" aria-labelledby="journey-title">
+          <div className="journey-heading">
+            <p className="journey-kicker">The path so far</p>
+            <h2 id="journey-title">Experience &amp; education</h2>
+          </div>
+          <div className="journey-columns">
+            <div className="journey-column">
+              <h3>Work experience</h3>
+              <ol className="journey-list">
+                <li>
+                  <span className="journey-time">April 2024 – August 2026</span>
+                  <h4>Software Engineer</h4>
+                  <a className="journey-company" href="https://mimic.com/" target="_blank" rel="noopener noreferrer">Mimic <span aria-hidden="true">↗</span></a>
+                  <p>Enterprise security software focused on ransomware defense.</p>
+                </li>
+              </ol>
+            </div>
+            <div className="journey-column">
+              <h3>Education</h3>
+              <ol className="journey-list">
+                <li>
+                  <h4>Fullstack Academy</h4>
+                  <p>Software engineering training</p>
+                </li>
+                <li>
+                  <h4>SUNY Potsdam</h4>
+                  <p>Studied physics and chemistry</p>
+                </li>
+              </ol>
             </div>
           </div>
         </section>
@@ -115,7 +145,7 @@ export default function HomePage() {
             <a className="contact-link" href="mailto:csn.nieves@gmail.com">csn.nieves@gmail.com <ArrowIcon /></a>
             <div className="profile-links">
               <a href="https://www.linkedin.com/in/christophernieves20" target="_blank" rel="noopener noreferrer">LinkedIn <ArrowIcon /></a>
-              <a href="https://github.com/Nievescs20" target="_blank" rel="noopener noreferrer">GitHub <ArrowIcon /></a>
+              <a href="https://github.com/csn-nieves" target="_blank" rel="noopener noreferrer">GitHub <ArrowIcon /></a>
             </div>
           </div>
         </section>

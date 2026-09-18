@@ -22,7 +22,7 @@ const Footer = () => {
           <li className="mr-[15px] inline-block">
             <a
               className="text-[#333]"
-              href="https://github.com/Nievescs20"
+              href="https://github.com/csn-nieves"
               target="_blank" rel="noopener noreferrer"
             >
               <img

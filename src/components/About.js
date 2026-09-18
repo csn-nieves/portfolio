@@ -87,8 +87,8 @@ const About = () => {
                       GitHub:
                     </span>
                     <span className="second inline-block">
-                      <a href="https://github.com/Nievescs20" target="_blank" rel="noopener noreferrer">
-                        nievescs20
+                      <a href="https://github.com/csn-nieves" target="_blank" rel="noopener noreferrer">
+                        csn-nieves
                       </a>
                     </span>
                   </li>
@@ -127,10 +127,10 @@ const About = () => {
                       Soccer
                     </li>
                     <li className="mb-[8px] w-full float-left relative pl-[25px]">
-                      Rock Climbing
+                      Running
                     </li>
                     <li className="mb-[8px] w-full float-left relative pl-[25px]">
-                      Running
+                      Rock Climbing
                     </li>
                   </ul>
                 </div>
