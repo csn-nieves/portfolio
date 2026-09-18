@@ -68,9 +68,9 @@ export const Detail = ({
       <div className="cavani_tm_modalbox opened">
         <div className="box_inner">
           <div className="close">
-            <a href="#" onClick={toggleModal}>
+            <button type="button" onClick={toggleModal} aria-label="Close project details">
               <i className="icon-cancel" />
-            </a>
+            </button>
           </div>
           <div className="description_wrap">
             <div className="popup_details w-full h-auto clear-both float-left">

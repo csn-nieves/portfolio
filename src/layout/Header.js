@@ -35,7 +35,7 @@ const Header = () => {
                 alt="image"
               />
             </a>
-            <a href="#">
+            <a href="#home" onClick={() => { navChange("home"); setToggle(false); }}>
               <span className="text text-black uppercase font-poppins text-[22px] font-extrabold tracking-[2px] leading-[50px]">
                 CN.
               </span>
@@ -127,7 +127,7 @@ const Header = () => {
                   <a
                     className="text-[#333]"
                     href="https://www.linkedin.com/in/christophernieves20"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                   >
                     <img
                       className="svg inline-block"
@@ -140,7 +140,7 @@ const Header = () => {
                   <a
                     className="text-[#333]"
                     href="https://github.com/Nievescs20"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                   >
                     <img
                       className="svg inline-block"
@@ -152,7 +152,7 @@ const Header = () => {
               </ul>
             </div>
             <div className="copyright w-full float-left">
-              <p className="text-[#333] font-poppins">Copyright © 2023</p>
+              <p className="text-[#333] font-poppins">Copyright © {new Date().getFullYear()}</p>
             </div>
           </div>
         </div>
@@ -161,7 +161,7 @@ const Header = () => {
         <div className="logo" data-type="image">
           {" "}
           {/* You can use text or image as logo. data-type values are: "image" and "text"  */}
-          <a className="image" href="#">
+          <a className="image" href="#home" onClick={() => navChange("home")}>
             <img
               className="max-w-[110px] max-h-[65px] inline-block"
               src="assets/img/about/LightLogo_CN.svg"
@@ -170,7 +170,8 @@ const Header = () => {
           </a>
           <a
             className="text no-underline text-black uppercase font-poppins text-[25px] font-extrabold tracking-[2px] leading-[70px]"
-            href="#"
+            href="#home"
+            onClick={() => navChange("home")}
           >
             <span className="relative top-[2px]">CN.</span>
           </a>

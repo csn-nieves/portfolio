@@ -1,9 +1,7 @@
 import { CavaniContext } from "@/src/Context";
 import About from "@/src/components/About";
-import Blog from "@/src/components/Blog";
 import Contact from "@/src/components/Contact";
 // import News from "@/src/components/News";
-import Service from "@/src/components/Service";
 import Layout from "@/src/layout/Layout";
 import dynamic from "next/dynamic";
 import { useContext, useEffect } from "react";
@@ -68,9 +66,7 @@ const IndexGlitch = () => {
           {/* PORTFOLIO */}
           <Portfolio />
           {/* SERVICE */}
-          <Service />
           {/* NEWS */}
-          <Blog />
           {/* CONTACT */}
           <Contact />
         </div>
