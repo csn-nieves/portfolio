@@ -56,8 +56,6 @@ function ThemeToggle() {
     window.dispatchEvent(new Event(themeChangeEvent));
   };
 
-  const nextTheme = theme === "dark" ? "light" : "dark";
-
   return (
     <button
       type="button"
@@ -67,9 +65,16 @@ function ThemeToggle() {
       aria-checked={theme === "dark"}
       onClick={toggleTheme}
     >
-      <span className="theme-toggle-label">Dark mode</span>
       <span className="theme-toggle-track" aria-hidden="true">
-        <span className="theme-toggle-thumb" />
+        <span className="theme-toggle-thumb">
+          <svg className="theme-icon theme-icon-sun" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+            <path d="M8 1.25v1.5M8 13.25v1.5M1.25 8h1.5M13.25 8h1.5M3.23 3.23l1.06 1.06M11.71 11.71l1.06 1.06M12.77 3.23l-1.06 1.06M4.29 11.71l-1.06 1.06" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+          </svg>
+          <svg className="theme-icon theme-icon-moon" viewBox="0 0 16 16" fill="none">
+            <path d="M13.2 10.35A5.6 5.6 0 0 1 5.65 2.8 5.6 5.6 0 1 0 13.2 10.35Z" fill="currentColor" />
+          </svg>
+        </span>
       </span>
     </button>
   );
