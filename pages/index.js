@@ -116,7 +116,9 @@ export default function HomePage() {
                     <span className="journey-time">{item.dates}</span>
                     <h4>{item.role}</h4>
                     <a className="journey-company" href={item.companyUrl} target="_blank" rel="noopener noreferrer">{item.company} <span aria-hidden="true">↗</span></a>
-                    <p>{item.description}</p>
+                    <ul className="journey-highlights">
+                      {item.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+                    </ul>
                   </li>
                 ))}
               </ol>
