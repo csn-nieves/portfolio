@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useRef, useState, useSyncExternalStore } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { portfolioContent } from "../data";
 
 const { navigation, person } = portfolioContent;
@@ -43,17 +44,26 @@ function ThemeToggle() {
 
   const toggleTheme = () => {
     const nextTheme = theme === "dark" ? "light" : "dark";
-    document.documentElement.dataset.theme = nextTheme;
-    document.documentElement.style.colorScheme = nextTheme;
-    document.querySelector("#portfolio-theme-color")?.setAttribute("content", nextTheme === "dark" ? "#111719" : "#f6f7f5");
+    const applyTheme = () => {
+      document.documentElement.dataset.theme = nextTheme;
+      document.documentElement.style.colorScheme = nextTheme;
+      document.querySelector("#portfolio-theme-color")?.setAttribute("content", nextTheme === "dark" ? "#111719" : "#f6f7f5");
 
-    try {
-      localStorage.setItem(themeStorageKey, nextTheme);
-    } catch (error) {
-      // The visual preference still applies for the current page when storage is unavailable.
+      try {
+        localStorage.setItem(themeStorageKey, nextTheme);
+      } catch (error) {
+        // The visual preference still applies for the current page when storage is unavailable.
+      }
+
+      window.dispatchEvent(new Event(themeChangeEvent));
+    };
+
+    if (document.startViewTransition && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.startViewTransition(applyTheme);
+      return;
     }
 
-    window.dispatchEvent(new Event(themeChangeEvent));
+    applyTheme();
   };
 
   return (
@@ -80,8 +90,33 @@ function ThemeToggle() {
   );
 }
 
+export function ViewTransitionLink({ href, onClick, ...props }) {
+  const router = useRouter();
+
+  const handleClick = (event) => {
+    onClick?.(event);
+    const isModifiedClick = event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
+    const opensElsewhere = props.target && props.target !== "_self";
+
+    if (
+      event.defaultPrevented
+      || event.button !== 0
+      || isModifiedClick
+      || opensElsewhere
+      || !document.startViewTransition
+      || window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) return;
+
+    event.preventDefault();
+    document.startViewTransition(() => router.push(href));
+  };
+
+  return <Link href={href} onClick={handleClick} {...props} />;
+}
+
 export function SiteHeader({ home = false }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
   const menuButton = useRef(null);
   const closeMenu = () => setMenuOpen(false);
   const handleMenuKeyDown = (event) => {
@@ -91,14 +126,45 @@ export function SiteHeader({ home = false }) {
     }
   };
   const prefix = home ? "" : "/";
+
+  useEffect(() => {
+    if (!home) return undefined;
+
+    const sections = navigation
+      .map(({ href }) => document.querySelector(href))
+      .filter(Boolean);
+    if (!sections.length) return undefined;
+
+    const observer = new IntersectionObserver((entries) => {
+      const visibleSection = entries
+        .filter(({ isIntersecting }) => isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (visibleSection) setActiveSection(`#${visibleSection.target.id}`);
+    }, {
+      rootMargin: "-18% 0px -35% 0px",
+      threshold: [0, .2, .5, .8],
+    });
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [home]);
+
   return (
     <header className="site-header page-width" id="top">
       <a className="skip-link" href="#main-content">Skip to content</a>
-      <Link className="site-mark" href={home ? "#top" : "/"} onClick={closeMenu} aria-label={`${person.fullName}, back to top`}>{person.initials}</Link>
+      <Link className="site-mark" href={home ? "#top" : "/"} onClick={closeMenu} aria-label={`${person.fullName}, back to top`} data-text={person.initials}>{person.initials}</Link>
       <div className="header-actions">
         <nav className={menuOpen ? "site-nav is-open" : "site-nav"} id="site-navigation" aria-label="Main navigation" onKeyDown={handleMenuKeyDown}>
           {navigation.map((item) => (
-            <Link key={item.href} href={`${prefix}${item.href}`} onClick={closeMenu}>{item.label}</Link>
+            <Link
+              key={item.href}
+              href={`${prefix}${item.href}`}
+              onClick={closeMenu}
+              aria-current={home && activeSection === item.href ? "location" : undefined}
+            >
+              {item.label}
+            </Link>
           ))}
         </nav>
         <ThemeToggle />
@@ -114,6 +180,7 @@ export function SiteHeader({ home = false }) {
           <span className="menu-lines" aria-hidden="true"><span /><span /><span /></span>
         </button>
       </div>
+      <span className="scroll-progress" aria-hidden="true" />
     </header>
   );
 }

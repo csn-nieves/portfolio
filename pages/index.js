@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowIcon, PortfolioHead, SiteFooter, SiteHeader } from "../components/PortfolioChrome";
+import { ArrowIcon, PortfolioHead, SiteFooter, SiteHeader, ViewTransitionLink } from "../components/PortfolioChrome";
 import { portfolioContent, projects, technologyNames } from "../data";
 
 const { about, contact, hero, journey, person, seo, work } = portfolioContent;
@@ -17,7 +16,7 @@ function ProjectRow({ project, index }) {
   const image = project.imageSize;
   return (
     <article className={`project-row ${index % 2 ? "project-row-reverse" : ""}`}>
-      <div className="project-media">
+      <div className="project-media" style={{ "--project-transition-name": `project-${project.slug}` }}>
         <Image
           src={`/${project.mainImage}`}
           width={image.width}
@@ -34,9 +33,9 @@ function ProjectRow({ project, index }) {
             {project.stack.map((tech) => <li key={tech}>{technologyName(tech)}</li>)}
           </ul>
         )}
-        <Link href={`/work/${project.slug}`} className="text-action">
+        <ViewTransitionLink href={`/work/${project.slug}`} className="text-action">
           {work.projectAction} <ArrowIcon />
-        </Link>
+        </ViewTransitionLink>
       </div>
     </article>
   );
@@ -83,7 +82,7 @@ export default function HomePage() {
           </div>
         </section>
         <section className="work-section page-width" id="work" aria-labelledby="work-title">
-          <h2 id="work-title">{work.heading}</h2>
+          <h2 className="motion-heading" id="work-title">{work.heading}</h2>
           <div className="project-list">
             {selectedProjects.map((project, index) => (
               <ProjectRow key={project.name} project={project} index={index} />
@@ -92,7 +91,7 @@ export default function HomePage() {
         </section>
         <section className="about-feature page-width" id="about" aria-labelledby="about-title">
           <div className="about-story">
-            <h2 id="about-title">{about.headingPrefix}{" "}<br />{person.firstName}</h2>
+            <h2 className="motion-heading" id="about-title">{about.headingPrefix}{" "}<br />{person.firstName}</h2>
             <p>{about.summary}</p>
           </div>
           <div className="about-details">
@@ -122,7 +121,7 @@ export default function HomePage() {
         <section className="journey-section page-width" id="journey" aria-labelledby="journey-title">
           <div className="journey-heading">
             <p className="journey-kicker">{journey.kicker}</p>
-            <h2 id="journey-title">{journey.heading}</h2>
+            <h2 className="motion-heading" id="journey-title">{journey.heading}</h2>
           </div>
           <div className="journey-columns">
             <div className="journey-column">
@@ -155,7 +154,7 @@ export default function HomePage() {
         </section>
         <section id="contact" className="contact-feature page-width" aria-labelledby="contact-title">
           <div>
-            <h2 id="contact-title">{contact.heading}</h2>
+            <h2 className="motion-heading" id="contact-title">{contact.heading}</h2>
             <p>{contact.description}</p>
           </div>
           <div className="contact-actions">

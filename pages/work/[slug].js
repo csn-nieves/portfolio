@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowIcon, PortfolioHead, SiteFooter, SiteHeader } from "../../components/PortfolioChrome";
+import { ArrowIcon, PortfolioHead, SiteFooter, SiteHeader, ViewTransitionLink } from "../../components/PortfolioChrome";
 import { portfolioContent, projects, technologyNames } from "../../data";
 
 const { contact, person, projectPage } = portfolioContent;
@@ -38,10 +38,10 @@ export default function ProjectPage({ project, nextProject }) {
         <Link href="/#work" className="project-back">{projectPage.backLabel}</Link>
         <header className="project-detail-header">
           <p className="project-eyebrow">{projectPage.eyebrow}</p>
-          <h1>{project.name}</h1>
+          <h1 className="motion-heading">{project.name}</h1>
           <p className="project-lede">{project.description}</p>
         </header>
-        <figure className="project-detail-hero">
+        <figure className="project-detail-hero" style={{ "--project-transition-name": `project-${project.slug}` }}>
           <Image src={`/${project.mainImage}`} width={project.imageSize.width} height={project.imageSize.height} alt={`${project.name} project screenshot`} sizes="(max-width: 760px) 100vw, 1200px" priority />
         </figure>
         <div className="project-detail-info">
@@ -62,7 +62,7 @@ export default function ProjectPage({ project, nextProject }) {
           <section className="project-gallery" aria-labelledby="gallery-title">
             <div className="project-gallery-heading">
               <p className="project-eyebrow">{projectPage.galleryKicker}</p>
-              <h2 id="gallery-title">{projectPage.galleryHeading}</h2>
+              <h2 className="motion-heading" id="gallery-title">{projectPage.galleryHeading}</h2>
             </div>
             {project.gallery.map((image) => (
               <figure key={image.src}>
@@ -79,7 +79,7 @@ export default function ProjectPage({ project, nextProject }) {
         <nav className="project-detail-next" aria-label="Project navigation">
           <div>
             <span>{projectPage.nextProjectLabel}</span>
-            <Link href={`/work/${nextProject.slug}`}>{nextProject.name} <ArrowIcon /></Link>
+            <ViewTransitionLink href={`/work/${nextProject.slug}`}>{nextProject.name} <ArrowIcon /></ViewTransitionLink>
           </div>
           <Link href="/#work" className="project-all-work">{projectPage.allWorkLabel}</Link>
         </nav>
