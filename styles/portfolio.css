@@ -54,7 +54,7 @@ html:has(.portfolio-site)::-webkit-scrollbar-thumb:hover { background: var(--por
 .site-nav { display: flex; gap: 42px; align-items: center; }
 .site-nav a { font-family: Archivo, sans-serif; font-size: 16px; font-weight: 600; transition: color .2s ease; }
 .site-nav a:hover, .profile-links a:hover, .site-footer a:hover { color: var(--portfolio-teal); }
-.theme-toggle { min-width: 52px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 0 2px; color: var(--portfolio-teal); background: transparent; border: 0; }
+.theme-toggle { min-width: 52px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 0 2px; color: var(--portfolio-teal); background: transparent; border: 0; border-radius: 999px; }
 .theme-toggle-track { position: relative; width: 48px; height: 28px; flex: 0 0 auto; padding: 3px; border: 1px solid var(--portfolio-rule); border-radius: 999px; background: var(--portfolio-media); transition: background .2s ease, border-color .2s ease; }
 .theme-toggle:hover .theme-toggle-track { border-color: var(--portfolio-teal); }
 .theme-toggle-thumb { width: 20px; height: 20px; display: grid; place-items: center; border-radius: 50%; color: var(--portfolio-teal); background: var(--portfolio-paper); box-shadow: 0 1px 4px var(--portfolio-menu-shadow); transition: color .2s ease, transform .2s ease, background .2s ease; }
