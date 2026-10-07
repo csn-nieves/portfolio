@@ -51,8 +51,8 @@ body:has(.portfolio-site) { margin: 0; background: var(--portfolio-paper); }
   gap: 32px;
   padding-block: 38px 48px;
 }
-.hero-copy { position: relative; z-index: 1; }
-.hero h1 { margin: 0 0 8px; font-family: Archivo, sans-serif; font-size: clamp(100px, 10.5vw, 150px); font-weight: 800; letter-spacing: -.075em; line-height: .87; }
+.hero-copy { position: relative; z-index: 1; min-width: 0; container-type: inline-size; }
+.hero h1 { margin: 0 0 8px; font-family: Archivo, sans-serif; font-size: clamp(56px, 18.5cqw, 124px); font-weight: 800; letter-spacing: -.075em; line-height: .87; }
 .hero-role, .hero-intro { margin: 0; color: var(--portfolio-quiet); font-family: Archivo, sans-serif; font-size: clamp(23px, 2.1vw, 30px); line-height: 1.25; }
 .hero-role { margin-top: 26px; }
 .hero-intro { max-width: 27ch; margin-top: 8px; font-size: clamp(19px, 1.7vw, 23px); line-height: 1.35; }

@@ -8,7 +8,7 @@ Christopher Nieves is a software engineer. The portfolio should let a hiring man
 
 ## Direction: a clear personal introduction with work in view
 
-Use a quiet, light page with strong dark type and generous room around project imagery. The grayscale portrait remains a personal anchor, but takes less space than it does in the current split-screen layout. A larger, tightly set name crosses the edge of the portrait frame on desktop. The portrait retains its intermittent glitch effect. Together they form the one expressive moment; the rest of the page stays simple. On mobile, the name and portrait stack naturally with no overlap that hides content.
+Use a quiet, light page with strong dark type and generous room around project imagery. The grayscale portrait remains a personal anchor, but takes less space than it does in the current split-screen layout. A large, tightly set name stays within its text column and maintains clear space beside the portrait at every width. The portrait retains its intermittent glitch effect. Together they form the one expressive moment; the rest of the page stays simple. On mobile, the name and portrait stack naturally with no overlap that hides content.
 
 This draws on the direct role statement and work-first hierarchy seen in the supplied portfolio references. The site should retain Christopher's identity and projects rather than recreate any reference site's styling.
 
