@@ -1,3 +1,102 @@
+// Edit the live portfolio's text, links, history, and project entries here.
+export const portfolioContent = {
+  seo: {
+    title: "Christopher Nieves | Software Engineer",
+    description:
+      "Christopher Nieves is a software engineer. Explore selected web projects and get in touch.",
+  },
+  person: {
+    firstName: "Christopher",
+    lastName: "Nieves",
+    fullName: "Christopher Nieves",
+    initials: "CN",
+    role: "Software engineer",
+    location: "Saratoga Springs, NY",
+    email: "csn.nieves@gmail.com",
+    portrait: {
+      src: "/assets/img/about/christopher-nieves-headshot.jpeg",
+      width: 1254,
+      height: 1254,
+      alt: "Black-and-white headshot of Christopher Nieves",
+    },
+  },
+  navigation: [
+    { label: "Work", href: "#work" },
+    { label: "About", href: "#about" },
+    { label: "Contact", href: "#contact" },
+  ],
+  hero: {
+    intro: "From physics and chemistry to building web applications.",
+    locationPrefix: "Based in",
+    primaryAction: "View selected work",
+    secondaryAction: "Email me",
+  },
+  work: {
+    heading: "Selected work",
+    projectAction: "View project",
+  },
+  about: {
+    headingPrefix: "About",
+    summary:
+      "I studied physics and chemistry at SUNY Potsdam, then trained at Fullstack Academy before working as a software engineer.",
+    locationLabel: "Based in",
+    skillsLabel: "Skills",
+    skills: ["React", "TypeScript", "JavaScript", "Go", "HTML & CSS"],
+    interestsLabel: "Outside work",
+    interests: ["Soccer", "Running", "Rock Climbing"],
+  },
+  journey: {
+    kicker: "The path so far",
+    heading: "Experience & education",
+    experienceHeading: "Work experience",
+    experience: [
+      {
+        dates: "April 2024 – August 2026",
+        role: "Software Engineer",
+        company: "Mimic",
+        companyUrl: "https://mimic.com/",
+        description: "Enterprise security software focused on ransomware defense.",
+      },
+    ],
+    educationHeading: "Education",
+    education: [
+      { school: "Fullstack Academy", description: "Software engineering training" },
+      { school: "SUNY Potsdam", description: "Studied physics and chemistry" },
+    ],
+  },
+  contact: {
+    heading: "Let’s connect.",
+    description: "Have a project or opportunity in mind? Send me an email.",
+    projectPrompt: "Have a project or opportunity in mind?",
+    emailAction: "Email me",
+    socialLinks: [
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/christophernieves20" },
+      { label: "GitHub", href: "https://github.com/csn-nieves" },
+    ],
+  },
+  projectPage: {
+    backLabel: "← All work",
+    eyebrow: "Selected work",
+    overviewHeading: "Overview",
+    technologiesHeading: "Technologies",
+    galleryKicker: "More from the project",
+    galleryHeading: "A closer look",
+    nextProjectLabel: "Next project",
+    allWorkLabel: "All work ↑",
+  },
+};
+
+export const technologyNames = {
+  react: "React",
+  redux: "Redux",
+  sequelize: "Sequelize",
+  stripe: "Stripe",
+  tailwind: "Tailwind CSS",
+  typescript: "TypeScript",
+  socketio: "Socket.io",
+  leaflet: "Leaflet",
+};
+
 export const projects = [
   {
     name: "Contracted Site",

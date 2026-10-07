@@ -1,16 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon, PortfolioHead, SiteFooter, SiteHeader } from "../../components/PortfolioChrome";
-import { projects } from "../../data";
+import { portfolioContent, projects, technologyNames } from "../../data";
+
+const { contact, person, projectPage } = portfolioContent;
 
 const orderedProjects = [...projects].sort(
   (a, b) => (a.displayOrder ?? Infinity) - (b.displayOrder ?? Infinity),
 );
-const techNames = {
-  react: "React", redux: "Redux", sequelize: "Sequelize", stripe: "Stripe",
-  tailwind: "Tailwind CSS", typescript: "TypeScript", socketio: "Socket.io", leaflet: "Leaflet",
-};
-const technologyName = (path) => techNames[path.split("/").pop().replace(".svg", "")];
+const technologyName = (path) => technologyNames[path.split("/").pop().replace(".svg", "")];
 
 export async function getStaticPaths() {
   return {
@@ -34,12 +32,12 @@ export default function ProjectPage({ project, nextProject }) {
   const summary = project.summaries[0]?.summary;
   return (
     <div className="portfolio-site project-page">
-      <PortfolioHead title={`${project.name} | Christopher Nieves`} description={project.description} />
+      <PortfolioHead title={`${project.name} | ${person.fullName}`} description={project.description} />
       <SiteHeader />
       <main className="page-width project-detail" id="main-content">
-        <Link href="/#work" className="project-back">← All work</Link>
+        <Link href="/#work" className="project-back">{projectPage.backLabel}</Link>
         <header className="project-detail-header">
-          <p className="project-eyebrow">Selected work</p>
+          <p className="project-eyebrow">{projectPage.eyebrow}</p>
           <h1>{project.name}</h1>
           <p className="project-lede">{project.description}</p>
         </header>
@@ -48,12 +46,12 @@ export default function ProjectPage({ project, nextProject }) {
         </figure>
         <div className="project-detail-info">
           <div>
-            <h2>Overview</h2>
+            <h2>{projectPage.overviewHeading}</h2>
             <p>{summary}</p>
           </div>
           {project.stack.length > 0 && (
             <div>
-              <h2>Technologies</h2>
+              <h2>{projectPage.technologiesHeading}</h2>
               <ul className="project-detail-stack">
                 {project.stack.map((tech) => <li key={tech}>{technologyName(tech)}</li>)}
               </ul>
@@ -63,8 +61,8 @@ export default function ProjectPage({ project, nextProject }) {
         {project.gallery?.length > 0 && (
           <section className="project-gallery" aria-labelledby="gallery-title">
             <div className="project-gallery-heading">
-              <p className="project-eyebrow">More from the project</p>
-              <h2 id="gallery-title">A closer look</h2>
+              <p className="project-eyebrow">{projectPage.galleryKicker}</p>
+              <h2 id="gallery-title">{projectPage.galleryHeading}</h2>
             </div>
             {project.gallery.map((image) => (
               <figure key={image.src}>
@@ -75,15 +73,15 @@ export default function ProjectPage({ project, nextProject }) {
           </section>
         )}
         <div className="project-detail-contact">
-          <p>Have a project or opportunity in mind?</p>
-          <a href="mailto:csn.nieves@gmail.com">Email me <ArrowIcon /></a>
+          <p>{contact.projectPrompt}</p>
+          <a href={`mailto:${person.email}`}>{contact.emailAction} <ArrowIcon /></a>
         </div>
         <nav className="project-detail-next" aria-label="Project navigation">
           <div>
-            <span>Next project</span>
+            <span>{projectPage.nextProjectLabel}</span>
             <Link href={`/work/${nextProject.slug}`}>{nextProject.name} <ArrowIcon /></Link>
           </div>
-          <Link href="/#work" className="project-all-work">All work ↑</Link>
+          <Link href="/#work" className="project-all-work">{projectPage.allWorkLabel}</Link>
         </nav>
       </main>
       <SiteFooter />

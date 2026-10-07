@@ -1,24 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon, PortfolioHead, SiteFooter, SiteHeader } from "../components/PortfolioChrome";
-import { projects } from "../data";
+import { portfolioContent, projects, technologyNames } from "../data";
+
+const { about, contact, hero, journey, person, seo, work } = portfolioContent;
 
 const selectedProjects = [...projects].sort(
   (a, b) => (a.displayOrder ?? Infinity) - (b.displayOrder ?? Infinity),
 );
-const techNames = {
-  react: "React",
-  redux: "Redux",
-  sequelize: "Sequelize",
-  stripe: "Stripe",
-  tailwind: "Tailwind CSS",
-  typescript: "TypeScript",
-  socketio: "Socket.io",
-  leaflet: "Leaflet",
-};
 const technologyName = (path) => {
   const name = path.split("/").pop().replace(".svg", "");
-  return techNames[name] || name;
+  return technologyNames[name] || name;
 };
 
 function ProjectRow({ project, index }) {
@@ -43,7 +35,7 @@ function ProjectRow({ project, index }) {
           </ul>
         )}
         <Link href={`/work/${project.slug}`} className="text-action">
-          View project <ArrowIcon />
+          {work.projectAction} <ArrowIcon />
         </Link>
       </div>
     </article>
@@ -53,26 +45,26 @@ function ProjectRow({ project, index }) {
 export default function HomePage() {
   return (
     <div className="portfolio-site">
-      <PortfolioHead title="Christopher Nieves | Software Engineer" description="Christopher Nieves is a software engineer. Explore selected web projects and get in touch." />
+      <PortfolioHead title={seo.title} description={seo.description} />
       <SiteHeader home />
       <main id="main-content">
         <section className="hero page-width" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <h1 id="hero-title">Christopher{" "}<br />Nieves</h1>
-            <p className="hero-role">Software engineer</p>
-            <p className="hero-intro">From physics and chemistry to building web applications.</p>
-            <p className="hero-location">Based in Saratoga Springs, NY</p>
+            <h1 id="hero-title">{person.firstName}{" "}<br />{person.lastName}</h1>
+            <p className="hero-role">{person.role}</p>
+            <p className="hero-intro">{hero.intro}</p>
+            <p className="hero-location">{hero.locationPrefix} {person.location}</p>
             <div className="hero-actions">
-              <a className="primary-action" href="#work">View selected work <ArrowIcon /></a>
-              <a className="secondary-action" href="mailto:csn.nieves@gmail.com">Email me</a>
+              <a className="primary-action" href="#work">{hero.primaryAction} <ArrowIcon /></a>
+              <a className="secondary-action" href={`mailto:${person.email}`}>{hero.secondaryAction}</a>
             </div>
           </div>
           <div className="hero-portrait">
             <Image
-              src="/assets/img/about/christopher-nieves-headshot.jpeg"
-              alt="Black-and-white headshot of Christopher Nieves"
-              width={1024}
-              height={1024}
+              src={person.portrait.src}
+              alt={person.portrait.alt}
+              width={person.portrait.width}
+              height={person.portrait.height}
               priority
             />
             <span className="portrait-glitch-layer portrait-glitch-layer-a" aria-hidden="true" />
@@ -81,7 +73,7 @@ export default function HomePage() {
           </div>
         </section>
         <section className="work-section page-width" id="work" aria-labelledby="work-title">
-          <h2 id="work-title">Selected work</h2>
+          <h2 id="work-title">{work.heading}</h2>
           <div className="project-list">
             {selectedProjects.map((project, index) => (
               <ProjectRow key={project.name} project={project} index={index} />
@@ -90,68 +82,69 @@ export default function HomePage() {
         </section>
         <section className="about-feature page-width" id="about" aria-labelledby="about-title">
           <div className="about-story">
-            <h2 id="about-title">About{" "}<br />Christopher</h2>
-            <p>I studied physics and chemistry at SUNY Potsdam, then trained at Fullstack Academy before working as a software engineer.</p>
+            <h2 id="about-title">{about.headingPrefix}{" "}<br />{person.firstName}</h2>
+            <p>{about.summary}</p>
           </div>
           <div className="about-details">
             <div className="about-list about-location">
-              <h3>Based in</h3>
-              <p>Saratoga Springs, NY</p>
+              <h3>{about.locationLabel}</h3>
+              <p>{person.location}</p>
             </div>
             <div className="about-list">
-              <h3>Skills</h3>
+              <h3>{about.skillsLabel}</h3>
               <ul>
-                <li>React</li><li>TypeScript</li><li>JavaScript</li><li>Go</li><li>HTML &amp; CSS</li>
+                {about.skills.map((skill) => <li key={skill}>{skill}</li>)}
               </ul>
             </div>
             <div className="about-list about-interests">
-              <h3>Outside work</h3>
-              <p>Soccer · Running · Rock Climbing</p>
+              <h3>{about.interestsLabel}</h3>
+              <p>{about.interests.join(" · ")}</p>
             </div>
           </div>
         </section>
         <section className="journey-section page-width" id="journey" aria-labelledby="journey-title">
           <div className="journey-heading">
-            <p className="journey-kicker">The path so far</p>
-            <h2 id="journey-title">Experience &amp; education</h2>
+            <p className="journey-kicker">{journey.kicker}</p>
+            <h2 id="journey-title">{journey.heading}</h2>
           </div>
           <div className="journey-columns">
             <div className="journey-column">
-              <h3>Work experience</h3>
+              <h3>{journey.experienceHeading}</h3>
               <ol className="journey-list">
-                <li>
-                  <span className="journey-time">April 2024 – August 2026</span>
-                  <h4>Software Engineer</h4>
-                  <a className="journey-company" href="https://mimic.com/" target="_blank" rel="noopener noreferrer">Mimic <span aria-hidden="true">↗</span></a>
-                  <p>Enterprise security software focused on ransomware defense.</p>
-                </li>
+                {journey.experience.map((item) => (
+                  <li key={`${item.company}-${item.role}`}>
+                    <span className="journey-time">{item.dates}</span>
+                    <h4>{item.role}</h4>
+                    <a className="journey-company" href={item.companyUrl} target="_blank" rel="noopener noreferrer">{item.company} <span aria-hidden="true">↗</span></a>
+                    <p>{item.description}</p>
+                  </li>
+                ))}
               </ol>
             </div>
             <div className="journey-column">
-              <h3>Education</h3>
+              <h3>{journey.educationHeading}</h3>
               <ol className="journey-list">
-                <li>
-                  <h4>Fullstack Academy</h4>
-                  <p>Software engineering training</p>
-                </li>
-                <li>
-                  <h4>SUNY Potsdam</h4>
-                  <p>Studied physics and chemistry</p>
-                </li>
+                {journey.education.map((item) => (
+                  <li key={item.school}>
+                    <h4>{item.school}</h4>
+                    <p>{item.description}</p>
+                  </li>
+                ))}
               </ol>
             </div>
           </div>
         </section>
         <section id="contact" className="contact-feature page-width" aria-labelledby="contact-title">
           <div>
-            <h2 id="contact-title">Let’s connect.</h2>
-            <p>Have a project or opportunity in mind? Send me an email.</p>
+            <h2 id="contact-title">{contact.heading}</h2>
+            <p>{contact.description}</p>
           </div>
           <div className="contact-actions">
-            <a className="contact-link" href="mailto:csn.nieves@gmail.com">csn.nieves@gmail.com <ArrowIcon /></a>
+            <a className="contact-link" href={`mailto:${person.email}`}>{person.email} <ArrowIcon /></a>
             <div className="profile-links">
-              <a href="https://www.linkedin.com/in/christophernieves20" target="_blank" rel="noopener noreferrer">LinkedIn <ArrowIcon /></a>
-              <a href="https://github.com/csn-nieves" target="_blank" rel="noopener noreferrer">GitHub <ArrowIcon /></a>
+              {contact.socialLinks.map((link) => (
+                <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">{link.label} <ArrowIcon /></a>
+              ))}
             </div>
           </div>
         </section>
