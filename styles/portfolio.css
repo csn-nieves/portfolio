@@ -123,6 +123,11 @@ body:has(.portfolio-site) { margin: 0; background: var(--portfolio-paper); }
 .about-list ul { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 0; padding: 0; list-style: none; font-family: Archivo, sans-serif; font-size: 18px; font-weight: 600; }
 .about-list p { margin: 0; font-family: Archivo, sans-serif; font-size: 18px; font-weight: 600; }
 .about-list + .about-list { margin-top: 26px; border-top: 1px solid var(--portfolio-rule); }
+.skills-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 36px; }
+.skills-group h4 { margin: 0 0 9px; color: var(--portfolio-teal); font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
+.skills-group ul { align-items: baseline; gap: 6px 0; font-size: 16px; line-height: 1.35; }
+.skills-group li { display: inline-flex; align-items: center; white-space: nowrap; }
+.skills-group li:not(:last-child)::after { content: "•"; margin: 0 10px; color: var(--portfolio-teal); font-size: .8em; }
 .journey-section { padding-block: 76px 96px; border-top: 1px solid var(--portfolio-rule); scroll-margin-top: calc(var(--portfolio-header-height) + 24px); }
 .journey-heading { margin-bottom: 56px; }
 .journey-kicker { margin: 0; color: var(--portfolio-teal); font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
@@ -197,6 +202,7 @@ body:has(.portfolio-site) { margin: 0; background: var(--portfolio-paper); }
   .about-story p + p { margin-top: 16px; font-size: 18px; }
   .about-details { margin-top: 42px; }
   .about-list ul, .about-list p { font-size: 16px; }
+  .skills-groups { grid-template-columns: 1fr; gap: 22px; }
   .journey-section { padding-block: 64px 72px; }
   .journey-heading { margin-bottom: 38px; }
   .journey-heading h2 { font-size: clamp(43px, 11vw, 60px); }

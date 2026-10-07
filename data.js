@@ -26,7 +26,8 @@ export const portfolioContent = {
     { label: "Contact", href: "#contact" },
   ],
   hero: {
-    intro: "From physics and chemistry to building web applications.",
+    intro:
+      "Building product experiences, developer tooling, and test infrastructure for complex systems.",
     locationPrefix: "Based in",
     primaryAction: "View selected work",
     secondaryAction: "Email me",
@@ -41,7 +42,24 @@ export const portfolioContent = {
       "I studied physics and chemistry at SUNY Potsdam, then trained at Fullstack Academy before working as a software engineer.",
     locationLabel: "Based in",
     skillsLabel: "Skills",
-    skills: ["React", "TypeScript", "JavaScript", "Go", "HTML & CSS"],
+    skillGroups: [
+      {
+        category: "Core skills",
+        skills: [
+          "TypeScript",
+          "React",
+          "Node.js",
+          "Elixir",
+          "PostgreSQL",
+          "Next.js",
+          "Playwright",
+        ],
+      },
+      {
+        category: "Currently strengthening",
+        skills: ["Python", "GCP"],
+      },
+    ],
     interestsLabel: "Outside work",
     interests: ["Soccer", "Running", "Rock Climbing"],
   },

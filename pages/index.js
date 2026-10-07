@@ -92,9 +92,16 @@ export default function HomePage() {
             </div>
             <div className="about-list">
               <h3>{about.skillsLabel}</h3>
-              <ul>
-                {about.skills.map((skill) => <li key={skill}>{skill}</li>)}
-              </ul>
+              <div className="skills-groups">
+                {about.skillGroups.map((group) => (
+                  <div className="skills-group" key={group.category}>
+                    <h4>{group.category}</h4>
+                    <ul>
+                      {group.skills.map((skill) => <li key={skill}>{skill}</li>)}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="about-list about-interests">
               <h3>{about.interestsLabel}</h3>
