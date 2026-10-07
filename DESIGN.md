@@ -8,7 +8,7 @@ Christopher Nieves is a software engineer. The portfolio should let a hiring man
 
 ## Direction: a clear personal introduction with work in view
 
-Use a quiet, light page with strong dark type and generous room around project imagery. The grayscale portrait remains a personal anchor, but takes less space than it does in the current split-screen layout. A large, tightly set name stays within its text column and maintains clear space beside the portrait at every width. The portrait retains its intermittent glitch effect. Together they form the one expressive moment; the rest of the page stays simple. On mobile, the name and portrait stack naturally with no overlap that hides content.
+Use a quiet page with strong type and generous room around project imagery. The default light presentation follows the original direction, while a deliberate dark palette is available from the persistent header. The grayscale portrait remains a personal anchor, but takes less space than it does in the current split-screen layout. A large, tightly set name stays within its text column and maintains clear space beside the portrait at every width. The portrait retains its intermittent glitch effect. Together they form the one expressive moment; the rest of the page stays simple. On mobile, the name and portrait stack naturally with no overlap that hides content.
 
 This draws on the direct role statement and work-first hierarchy seen in the supplied portfolio references. The site should retain Christopher's identity and projects rather than recreate any reference site's styling.
 
@@ -24,6 +24,8 @@ This draws on the direct role statement and work-first hierarchy seen in the sup
 | Media ground | `#E8EEEE` | Consistent background behind varied project screenshots |
 
 Use the accent sparingly. Do not recolor project screenshots; each project keeps its own visual character inside a consistent frame.
+
+The portfolio starts in light mode and offers an explicit Light/Dark control in the persistent header. The visitor's choice is stored locally and restored before the page paints; device color preference does not override it. Dark mode uses paper `#111719`, ink `#EDF2F1`, quiet text `#A9B5B7`, rule `#334347`, teal `#73BDCA`, and media ground `#1C272A`. Semantic CSS custom properties in `styles/portfolio.css` are the runtime source for both modes. Browser chrome follows the selected paper color. Portraits and project screenshots remain unfiltered in either mode.
 
 - Display: **Archivo** (variable), bold and closely tracked for the name and large section headings.
 - Body: **Source Sans 3**, regular/semibold, with comfortable line height.
