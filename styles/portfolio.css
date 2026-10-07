@@ -64,7 +64,7 @@ body:has(.portfolio-site) { margin: 0; background: var(--portfolio-paper); }
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: url("/assets/img/about/chrisBW.jpeg") center / cover no-repeat;
+  background: url("/assets/img/about/christopher-nieves-headshot.jpeg") center / cover no-repeat;
   opacity: 0;
   will-change: clip-path, transform, opacity;
 }

@@ -68,7 +68,13 @@ export default function HomePage() {
             </div>
           </div>
           <div className="hero-portrait">
-            <Image src="/assets/img/about/chrisBW.jpeg" alt="Illustrated portrait of Christopher Nieves" width={512} height={512} priority />
+            <Image
+              src="/assets/img/about/christopher-nieves-headshot.jpeg"
+              alt="Black-and-white headshot of Christopher Nieves"
+              width={1024}
+              height={1024}
+              priority
+            />
             <span className="portrait-glitch-layer portrait-glitch-layer-a" aria-hidden="true" />
             <span className="portrait-glitch-layer portrait-glitch-layer-b" aria-hidden="true" />
             <span className="portrait-glitch-layer portrait-glitch-layer-c" aria-hidden="true" />
