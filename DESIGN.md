@@ -36,7 +36,7 @@ Stage 3 implements these tokens in `styles/portfolio.css` under `:root` and page
 
 ## Page structure
 
-1. **Header:** name or CN mark at left; Work, About, Contact at right. Links navigate to real sections. On mobile, use a clearly labeled menu if all links do not fit.
+1. **Header:** name or CN mark at left; Work, About, Contact at right. The header stays visible while the page scrolls so navigation remains available. Links navigate to real sections. On mobile, use a clearly labeled menu if all links do not fit.
 2. **Introduction:** “Christopher Nieves” and “Software Engineer” in plain language, followed by the physics/chemistry-to-web background line and Saratoga Springs location. Primary action goes to selected work; contact is a secondary text link. The glitch portrait is visible on desktop and mobile.
 3. **Selected work:** four current entries from `data.js`, with image, project name, one factual description, and only verified technologies. No invented outcomes, client names, or status labels. The layout should allow new projects to replace older ones without redesigning the grid.
 4. **About:** restore the verified location, SUNY Potsdam and Fullstack Academy background, most recent software engineer role, listed skills, and interests in a readable fact layout. Leave out percentage skill bars and unverified current-employment dates.
@@ -48,6 +48,7 @@ Project detail presentation belongs to Stage 4. Stage 3 should keep the current 
 ## Interaction and responsive rules
 
 - Normal vertical document scrolling replaces the current full-screen panel switching. The URL hash identifies sections and native back/forward navigation remains useful.
+- Keep the header pinned to the top of the viewport on desktop and mobile. In-page anchors reserve enough space for it so section headings remain visible after navigation.
 - Project cards have a clear action and visible focus state. Hover can reveal detail but may not be the only way to discover it.
 - The portrait retains an intermittent, localized glitch treatment from the original site; other motion stays limited to purposeful hover/focus feedback. Honor `prefers-reduced-motion` by showing the still portrait.
 - Reserve image dimensions to prevent layout shifts. Preserve visible scrollbars and readable content at narrow widths and 200% zoom.
