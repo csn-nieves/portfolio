@@ -57,7 +57,15 @@ export default function HomePage() {
             </div>
             <p className="hero-location">{hero.locationPrefix} {person.location}</p>
             <div className="hero-actions">
-              <a className="primary-action" href="#work">{hero.primaryAction} <ArrowIcon /></a>
+              <a
+                className="primary-action"
+                href={hero.primaryHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${hero.primaryAction} (opens in a new tab)`}
+              >
+                {hero.primaryAction} <span aria-hidden="true">↗</span>
+              </a>
               <a className="secondary-action" href={`mailto:${person.email}`}>{hero.secondaryAction}</a>
             </div>
           </div>

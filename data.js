@@ -29,7 +29,8 @@ export const portfolioContent = {
     intro:
       "Building product experiences, developer tooling, and test infrastructure for complex systems.",
     locationPrefix: "Based in",
-    primaryAction: "View selected work",
+    primaryAction: "View my resume",
+    primaryHref: "/resume/christopher-nieves-resume.pdf",
     secondaryAction: "Email me",
   },
   work: {
