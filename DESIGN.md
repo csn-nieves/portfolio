@@ -37,7 +37,7 @@ Stage 3 implements these tokens in `styles/portfolio.css` under `:root` and page
 ## Page structure
 
 1. **Header:** name or CN mark at left; Work, About, Contact at right. The header stays visible while the page scrolls so navigation remains available. Links navigate to real sections. On mobile, use a clearly labeled menu if all links do not fit.
-2. **Introduction:** “Christopher Nieves” and “Software Engineer” in plain language, followed by the physics/chemistry-to-web background line and Saratoga Springs location. Primary action goes to selected work; contact is a secondary text link. The glitch portrait is visible on desktop and mobile.
+2. **Introduction:** “Christopher Nieves” leads the page. The role and broader engineering focus are grouped by a short teal signal rail so they read as one positioning statement without competing with the name or portrait; Saratoga Springs remains separate metadata. Primary action goes to selected work; contact is a secondary text link. The glitch portrait is visible on desktop and mobile.
 3. **Selected work:** four current entries from `data.js`, with image, project name, one factual description, and only verified technologies. No invented outcomes, client names, or status labels. The layout should allow new projects to replace older ones without redesigning the grid.
 4. **About:** restore the verified location, SUNY Potsdam and Fullstack Academy background, most recent software engineer role, listed skills, and interests in a readable fact layout. Leave out percentage skill bars and unverified current-employment dates.
 5. **Contact:** direct email action to `csn.nieves@gmail.com`, with LinkedIn and GitHub links. Keep the action obvious without a form until a real submission path exists.

@@ -51,8 +51,10 @@ export default function HomePage() {
         <section className="hero page-width" aria-labelledby="hero-title">
           <div className="hero-copy">
             <h1 id="hero-title">{person.firstName}{" "}<br />{person.lastName}</h1>
-            <p className="hero-role">{person.role}</p>
-            <p className="hero-intro">{hero.intro}</p>
+            <div className="hero-positioning">
+              <p className="hero-role">{person.role}</p>
+              <p className="hero-intro">{hero.intro}</p>
+            </div>
             <p className="hero-location">{hero.locationPrefix} {person.location}</p>
             <div className="hero-actions">
               <a className="primary-action" href="#work">{hero.primaryAction} <ArrowIcon /></a>
