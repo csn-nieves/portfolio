@@ -114,7 +114,7 @@ export default function HomePage() {
             </div>
             <div className="about-list about-interests">
               <h3>{about.interestsLabel}</h3>
-              <p>{about.interests.join(" · ")}</p>
+              <p>{about.interestsDescription}</p>
             </div>
           </div>
         </section>

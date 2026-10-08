@@ -161,6 +161,7 @@ html:has(.portfolio-site)::-webkit-scrollbar-thumb:active { background: var(--po
 .about-list h3 { margin: 0 0 16px; }
 .about-list ul { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 0; padding: 0; list-style: none; font-family: Archivo, sans-serif; font-size: 18px; font-weight: 600; }
 .about-list p { margin: 0; font-family: Archivo, sans-serif; font-size: 18px; font-weight: 600; }
+.about-interests p { max-width: 44ch; color: var(--portfolio-quiet); font-family: "Source Sans 3", sans-serif; font-weight: 400; line-height: 1.5; }
 .about-list + .about-list { margin-top: 26px; border-top: 1px solid var(--portfolio-rule); }
 .skills-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 36px; }
 .skills-group h4 { margin: 0 0 9px; color: var(--portfolio-teal); font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }

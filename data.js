@@ -62,7 +62,7 @@ export const portfolioContent = {
       },
     ],
     interestsLabel: "Outside work",
-    interests: ["Soccer", "Running", "Rock Climbing"],
+    interestsDescription: "Outside of work, I’m usually playing soccer, out for a run, or spending time at the climbing gym. I’m a seven-time marathoner. My most recent race was the Saratoga Half Marathon, and I’m now training to qualify for the 2028 Boston Marathon.",
   },
   journey: {
     kicker: "The path so far",
