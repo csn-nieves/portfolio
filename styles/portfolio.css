@@ -133,6 +133,7 @@ html:has(.portfolio-site)::-webkit-scrollbar-thumb:active { background: var(--po
 .work-section { padding-top: 18px; border-top: 1px solid var(--portfolio-rule); scroll-margin-top: calc(var(--portfolio-header-height) + 24px); }
 .work-section h2, .closing-sections h2 { margin: 0; font-family: Archivo, sans-serif; font-size: clamp(38px, 3.3vw, 50px); font-weight: 800; letter-spacing: -.055em; line-height: 1.1; }
 .project-list { margin-top: 22px; }
+.project-empty { max-width: 34rem; margin: 0; color: var(--portfolio-quiet); font-size: clamp(20px, 2vw, 28px); line-height: 1.4; }
 .project-row { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(270px, .85fr); align-items: center; gap: 28px; padding-bottom: 38px; margin-bottom: 38px; border-bottom: 1px solid var(--portfolio-rule); }
 .project-row-reverse { grid-template-columns: minmax(270px, .85fr) minmax(0, 1.55fr); }
 .project-row-reverse .project-media { order: 2; }

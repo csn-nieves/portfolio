@@ -84,9 +84,13 @@ export default function HomePage() {
         <section className="work-section page-width" id="work" aria-labelledby="work-title">
           <h2 className="motion-heading" id="work-title">{work.heading}</h2>
           <div className="project-list">
-            {selectedProjects.map((project, index) => (
-              <ProjectRow key={project.name} project={project} index={index} />
-            ))}
+            {selectedProjects.length > 0 ? (
+              selectedProjects.map((project, index) => (
+                <ProjectRow key={project.name} project={project} index={index} />
+              ))
+            ) : (
+              <p className="project-empty">New work is on the way.</p>
+            )}
           </div>
         </section>
         <section className="about-feature page-width" id="about" aria-labelledby="about-title">
