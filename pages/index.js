@@ -124,14 +124,16 @@ export default function HomePage() {
             <h2 className="motion-heading" id="journey-title">{journey.heading}</h2>
           </div>
           <div className="journey-columns">
-            <div className="journey-column">
+            <div className="journey-column journey-experience">
               <h3>{journey.experienceHeading}</h3>
               <ol className="journey-list">
                 {journey.experience.map((item) => (
-                  <li key={`${item.company}-${item.role}`}>
-                    <span className="journey-time">{item.dates}</span>
-                    <h4>{item.role}</h4>
-                    <a className="journey-company" href={item.companyUrl} target="_blank" rel="noopener noreferrer">{item.company} <span aria-hidden="true">↗</span></a>
+                  <li className="journey-experience-item" key={`${item.company}-${item.role}`}>
+                    <div className="journey-role-summary">
+                      <span className="journey-time">{item.dates}</span>
+                      <h4>{item.role}</h4>
+                      <a className="journey-company" href={item.companyUrl} target="_blank" rel="noopener noreferrer">{item.company} <span aria-hidden="true">↗</span></a>
+                    </div>
                     <ul className="journey-highlights">
                       {item.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
                     </ul>
@@ -139,7 +141,7 @@ export default function HomePage() {
                 ))}
               </ol>
             </div>
-            <div className="journey-column">
+            <div className="journey-column journey-education">
               <h3>{journey.educationHeading}</h3>
               <ol className="journey-list">
                 {journey.education.map((item) => (
