@@ -1,6 +1,10 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import { ArrowIcon, PortfolioHead, SiteFooter, SiteHeader, ViewTransitionLink } from "../components/PortfolioChrome";
+import { useState } from "react";
+import { ArrowIcon, PortfolioHead, SiteFooter, SiteHeader } from "../components/PortfolioChrome";
 import { portfolioContent, projects, technologyNames } from "../data";
+
+const ProjectShowcaseModal = dynamic(() => import("../components/ProjectShowcaseModal"), { ssr: false });
 
 const { about, contact, hero, journey, person, seo, work } = portfolioContent;
 
@@ -12,11 +16,17 @@ const technologyName = (path) => {
   return technologyNames[name] || name;
 };
 
-function ProjectRow({ project, index }) {
+function ProjectRow({ project, index, onOpen }) {
   const image = project.imageSize;
   return (
     <article className={`project-row ${index % 2 ? "project-row-reverse" : ""}`}>
-      <div className="project-media" style={{ "--project-transition-name": `project-${project.slug}` }}>
+      <button
+        className="project-media project-media-button"
+        style={{ "--project-transition-name": `project-${project.slug}` }}
+        type="button"
+        onClick={onOpen}
+        aria-label={`View ${project.name} project details`}
+      >
         <Image
           src={`/${project.mainImage}`}
           width={image.width}
@@ -24,8 +34,9 @@ function ProjectRow({ project, index }) {
           alt={`${project.name} project screenshot`}
           sizes="(max-width: 760px) 100vw, 62vw"
         />
-      </div>
+      </button>
       <div className="project-copy">
+        <p className="project-status">{project.status}</p>
         <h3>{project.name}</h3>
         <p>{project.description}</p>
         {project.stack.length > 0 && (
@@ -33,15 +44,17 @@ function ProjectRow({ project, index }) {
             {project.stack.map((tech) => <li key={tech}>{technologyName(tech)}</li>)}
           </ul>
         )}
-        <ViewTransitionLink href={`/work/${project.slug}`} className="text-action">
+        <button type="button" className="text-action text-action-button" onClick={onOpen}>
           {work.projectAction} <ArrowIcon />
-        </ViewTransitionLink>
+        </button>
       </div>
     </article>
   );
 }
 
 export default function HomePage() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
   return (
     <div className="portfolio-site">
       <PortfolioHead title={seo.title} description={seo.description} />
@@ -86,7 +99,12 @@ export default function HomePage() {
           <div className="project-list">
             {selectedProjects.length > 0 ? (
               selectedProjects.map((project, index) => (
-                <ProjectRow key={project.name} project={project} index={index} />
+                <ProjectRow
+                  key={project.name}
+                  project={project}
+                  index={index}
+                  onOpen={() => setSelectedProject(project)}
+                />
               ))
             ) : (
               <p className="project-empty">New work is on the way.</p>
@@ -174,6 +192,12 @@ export default function HomePage() {
         </section>
       </main>
       <SiteFooter home />
+      {selectedProject && (
+        <ProjectShowcaseModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </div>
   );
 }

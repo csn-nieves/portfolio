@@ -7,7 +7,9 @@ import { portfolioContent } from "../data";
 const { navigation, person } = portfolioContent;
 const themeStorageKey = "portfolio-theme";
 const themeChangeEvent = "portfolio-theme-change";
-const themeBootScript = `(function(){try{var theme=localStorage.getItem('${themeStorageKey}')==='dark'?'dark':'light';document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;}catch(error){document.documentElement.dataset.theme='light';document.documentElement.style.colorScheme='light';}})();`;
+const lightThemeColor = "#f6f7f5";
+const darkThemeColor = "#000000";
+const themeBootScript = `(function(){try{var theme=localStorage.getItem('${themeStorageKey}')==='dark'?'dark':'light';document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;document.querySelector('#portfolio-theme-color')?.setAttribute('content',theme==='dark'?'${darkThemeColor}':'${lightThemeColor}');}catch(error){document.documentElement.dataset.theme='light';document.documentElement.style.colorScheme='light';}})();`;
 const getThemeSnapshot = () => document.documentElement.dataset.theme === "dark" ? "dark" : "light";
 const getServerThemeSnapshot = () => "light";
 const subscribeToTheme = (onStoreChange) => {
@@ -30,7 +32,7 @@ export function PortfolioHead({ title, description }) {
       <meta name="description" content={description} />
       <meta name="author" content={person.fullName} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta id="portfolio-theme-color" name="theme-color" content="#f6f7f5" />
+      <meta id="portfolio-theme-color" name="theme-color" content={lightThemeColor} />
       <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -47,7 +49,7 @@ function ThemeToggle() {
     const applyTheme = () => {
       document.documentElement.dataset.theme = nextTheme;
       document.documentElement.style.colorScheme = nextTheme;
-      document.querySelector("#portfolio-theme-color")?.setAttribute("content", nextTheme === "dark" ? "#111719" : "#f6f7f5");
+      document.querySelector("#portfolio-theme-color")?.setAttribute("content", nextTheme === "dark" ? darkThemeColor : lightThemeColor);
 
       try {
         localStorage.setItem(themeStorageKey, nextTheme);

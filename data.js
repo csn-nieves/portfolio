@@ -136,7 +136,132 @@ export const technologyNames = {
   typescript: "TypeScript",
   socketio: "Socket.io",
   leaflet: "Leaflet",
+  maplibre: "MapLibre",
+  playwright: "Playwright",
+  postgresql: "PostgreSQL",
+  supabase: "Supabase",
+  vite: "Vite",
 };
 
 // Add new project entries here when they are ready to publish.
-export const projects = [];
+export const projects = [
+  {
+    slug: "flock",
+    name: "Flock",
+    status: "In development",
+    description:
+      "A mobile-first PWA for run clubs to organize groups, plan routes and events, coordinate attendance, and stay connected.",
+    mainImage: "assets/img/projects/flock/flock-detail.png",
+    imageSize: { width: 1440, height: 1020 },
+    stack: ["react", "typescript", "supabase", "postgresql", "maplibre", "playwright"],
+    summaries: [
+      {
+        summary:
+          "I’m building Flock to replace the patchwork of group chats, route tools, and spreadsheets that run-club organizers often use to coordinate a single run.",
+      },
+      {
+        summary:
+          "The current product supports flock membership, structured distance and pace options, mapped routes, RSVPs, private real-time chat, direct messages, discovery, reusable route libraries, responsive layouts, and opt-in web notifications. It is still in active development, with workflows validated across desktop and mobile test suites.",
+      },
+    ],
+    gallery: [
+      {
+        src: "/assets/img/projects/flock/events.png",
+        width: 1440,
+        height: 1521,
+        alt: "Flock events dashboard showing upcoming and past group runs",
+        caption: "A shared events view keeps upcoming runs, routes, and attendance in one place.",
+      },
+      {
+        src: "/assets/img/projects/flock/route-preview.png",
+        width: 1440,
+        height: 1919,
+        alt: "Flock route preview mapped through city streets",
+        caption: "Organizers can draw, preview, and reuse mapped routes while planning an event.",
+      },
+      {
+        src: "/assets/img/projects/flock/mobile-flocks.png",
+        width: 390,
+        height: 844,
+        alt: "Flock mobile interface showing a runner's groups",
+        caption: "The responsive experience is designed around how runners coordinate on the move.",
+      },
+    ],
+    showcaseMedia: [
+      {
+        type: "image",
+        src: "/assets/img/projects/flock/flock-detail.png",
+        width: 1440,
+        height: 1020,
+        alt: "Flock group overview with member activity and upcoming runs",
+        caption: "The flock overview brings membership, activity, and upcoming runs together.",
+      },
+      {
+        type: "image",
+        src: "/assets/img/projects/flock/create-flock.png",
+        width: 1440,
+        height: 1000,
+        alt: "Create a flock form with group details and running preferences",
+        caption: "New groups can define their identity, usual location, distances, and pace options.",
+      },
+      {
+        type: "image",
+        src: "/assets/img/projects/flock/events.png",
+        width: 1440,
+        height: 1521,
+        alt: "Flock events dashboard showing upcoming and past group runs",
+        caption: "A shared events view keeps upcoming runs, routes, and attendance in one place.",
+      },
+      {
+        type: "video",
+        src: "/assets/img/projects/flock/route-preview-last-5s.mp4",
+        poster: "/assets/img/projects/flock/route-preview.png",
+        width: 1280,
+        height: 888,
+        alt: "Five-second demonstration of an event route zooming into view in Flock",
+        caption: "The event route opens with a focused map transition that brings the full course into view.",
+      },
+      {
+        type: "image",
+        src: "/assets/img/projects/flock/live-chat.png",
+        width: 1440,
+        height: 1000,
+        alt: "Real-time chat inside a Flock running group",
+        caption: "Private real-time chat lets members coordinate without leaving the group.",
+      },
+      {
+        type: "image",
+        src: "/assets/img/projects/flock/discover.png",
+        width: 1440,
+        height: 1000,
+        alt: "Flock discovery page for finding nearby running groups",
+        caption: "Discovery helps runners find groups that match their location and interests.",
+      },
+      {
+        type: "image",
+        src: "/assets/img/projects/flock/dark-mode.png",
+        width: 1440,
+        height: 1000,
+        alt: "Flock interface in dark mode",
+        caption: "The complete interface supports a considered light and dark theme.",
+      },
+      {
+        type: "image",
+        src: "/assets/img/projects/flock/rsvp.png",
+        width: 1440,
+        height: 1521,
+        alt: "Flock RSVP dialog with route, distance, and pace selections",
+        caption: "Structured RSVPs capture the route, distance, and pace a runner plans to join.",
+      },
+      {
+        type: "image",
+        src: "/assets/img/projects/flock/route-drawing.png",
+        width: 1440,
+        height: 1521,
+        alt: "Route editor with points drawn on a map",
+        caption: "A focused route editor turns map points into a reusable run route.",
+      },
+    ],
+    displayOrder: 1,
+  },
+];

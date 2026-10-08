@@ -8,7 +8,10 @@ const { contact, person, projectPage } = portfolioContent;
 const orderedProjects = [...projects].sort(
   (a, b) => (a.displayOrder ?? Infinity) - (b.displayOrder ?? Infinity),
 );
-const technologyName = (path) => technologyNames[path.split("/").pop().replace(".svg", "")];
+const technologyName = (path) => {
+  const name = path.split("/").pop().replace(".svg", "");
+  return technologyNames[name] || name;
+};
 
 export async function getStaticPaths() {
   return {

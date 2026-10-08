@@ -4,7 +4,7 @@ Status: Stages 3–5 implemented. This document records the visual system and co
 
 ## Purpose and audience
 
-Christopher Nieves is a software engineer. The portfolio should let a hiring manager or potential collaborator understand who he is, inspect actual projects, and reach him by email. The first screen must establish role and show that work follows immediately. Existing projects are older work, so the site should describe them accurately and leave room for newer projects without implying current outcomes or experience levels.
+Christopher Nieves is a software engineer. The portfolio should let a hiring manager or potential collaborator understand who he is, inspect current work, and reach him by email. The first screen must establish his role and show that work follows immediately. Projects should be described accurately, including development status, without implying unverified outcomes or experience levels.
 
 ## Direction: a clear personal introduction with work in view
 
@@ -25,7 +25,7 @@ This draws on the direct role statement and work-first hierarchy seen in the sup
 
 Use the accent sparingly. Do not recolor project screenshots; each project keeps its own visual character inside a consistent frame.
 
-The portfolio starts in light mode and offers an explicit Light/Dark control in the persistent header. The visitor's choice is stored locally and restored before the page paints; device color preference does not override it. Dark mode uses paper `#111719`, ink `#EDF2F1`, quiet text `#A9B5B7`, rule `#334347`, teal `#73BDCA`, and media ground `#1C272A`. Semantic CSS custom properties in `styles/portfolio.css` are the runtime source for both modes. Browser chrome follows the selected paper color. Portraits and project screenshots remain unfiltered in either mode.
+The portfolio starts in light mode and offers an explicit Light/Dark control in the persistent header. The visitor's choice is stored locally and restored before the page paints; device color preference does not override it. Dark mode uses one continuous true-black ground `#000000` for the page, media, portrait, and navigation surfaces, with ink `#EDF2F1`, quiet text `#A9B5B7`, rule `#22282A`, muted teal `#4F929D`, and teal hover `#68AAB5`. Semantic CSS custom properties in `styles/portfolio.css` are the runtime source for both modes. Browser chrome follows the selected paper color. Portraits and project screenshots remain unfiltered in either mode.
 
 - Display: **Archivo** (variable), bold and closely tracked for the name and large section headings.
 - Body: **Source Sans 3**, regular/semibold, with comfortable line height.
@@ -40,7 +40,7 @@ Stage 3 implements these tokens in `styles/portfolio.css` under `:root` and page
 
 1. **Header:** name or CN mark at left; Work, About, Contact at right. The header stays visible while the page scrolls so navigation remains available. Links navigate to real sections. On mobile, use a clearly labeled menu if all links do not fit.
 2. **Introduction:** “Christopher Nieves” leads the page. The role and broader engineering focus are grouped by a short teal signal rail so they read as one positioning statement without competing with the name or portrait; Saratoga Springs remains separate metadata. Primary action goes to selected work; contact is a secondary text link. The glitch portrait is visible on desktop and mobile.
-3. **Selected work:** four current entries from `data.js`, with image, project name, one factual description, and only verified technologies. No invented outcomes, client names, or status labels. The layout should allow new projects to replace older ones without redesigning the grid.
+3. **Selected work:** curated entries from `data.js`, with image, project name, development status, a factual description, and only verified technologies. No invented outcomes or client names. The layout should allow new projects to be added without redesigning the grid.
 4. **About:** restore the verified location, SUNY Potsdam and Fullstack Academy background, most recent software engineer role, listed skills, and interests in a readable fact layout. Leave out percentage skill bars and unverified current-employment dates.
 5. **Contact:** direct email action to `csn.nieves@gmail.com`, with LinkedIn and GitHub links. Keep the action obvious without a form until a real submission path exists.
 6. **Footer:** small copyright and a return-to-top link if the page is long enough to benefit from it.
@@ -51,7 +51,7 @@ Project detail presentation belongs to Stage 4. Stage 3 should keep the current 
 
 - Normal vertical document scrolling replaces the current full-screen panel switching. The URL hash identifies sections and native back/forward navigation remains useful.
 - Keep the header pinned to the top of the viewport on desktop and mobile. In-page anchors reserve enough space for it so section headings remain visible after navigation.
-- Project cards have a clear action and visible focus state. Hover can reveal detail but may not be the only way to discover it.
+- Project cards have a clear action and visible focus state. Homepage project actions open an accessible, top-layer showcase dialog with expanded context and a keyboard-operable media carousel; direct project-page URLs remain available. The dialog restores focus when closed, locks background scrolling, supports Escape and backdrop dismissal, and keeps video playback user-controlled. Hover can reveal detail but may not be the only way to discover it.
 - The portrait retains the signature intermittent, localized glitch treatment from the original site. Secondary motion uses a single restrained language: teal signals mark active navigation and scroll progress, section rules pulse once as they enter, timeline progress follows reading progress, and project imagery receives a slight focus response. On desktop, each work-experience summary may remain anchored while its accomplishment bullets move into focus with scroll and reverse naturally when scrolling upward. Headings may reveal through a short vertical mask, and supported browsers may connect project thumbnails to detail imagery with a view transition.
 - Motion is progressive enhancement, never required to discover content or navigate. Keep transitions short, avoid continuous decorative movement beyond the established portrait treatment, and honor `prefers-reduced-motion` by removing scroll-linked reveals, route/theme transitions, and glitch effects.
 - Reserve image dimensions to prevent layout shifts. Preserve visible scrollbars and readable content at narrow widths and 200% zoom.
