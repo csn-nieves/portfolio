@@ -17,24 +17,36 @@ const technologyName = (path) => {
 };
 
 function ProjectRow({ project, index, onOpen }) {
-  const image = project.imageSize;
   return (
     <article className={`project-row ${index % 2 ? "project-row-reverse" : ""}`}>
-      <button
-        className="project-media project-media-button"
-        style={{ "--project-transition-name": `project-${project.slug}` }}
-        type="button"
-        onClick={onOpen}
-        aria-label={`View ${project.name} project details`}
-      >
-        <Image
-          src={`/${project.mainImage}`}
-          width={image.width}
-          height={image.height}
-          alt={`${project.name} project screenshot`}
-          sizes="(max-width: 760px) 100vw, 62vw"
-        />
-      </button>
+      {project.placeholder ? (
+        <div className="project-media project-placeholder-media" aria-hidden="true">
+          <Image
+            className="project-placeholder-image"
+            src="/assets/img/projects/coming-soon-dashboard.png"
+            width={1536}
+            height={1024}
+            alt=""
+            sizes="(max-width: 760px) 100vw, 62vw"
+          />
+        </div>
+      ) : (
+        <button
+          className="project-media project-media-button"
+          style={{ "--project-transition-name": `project-${project.slug}` }}
+          type="button"
+          onClick={onOpen}
+          aria-label={`View ${project.name} project details`}
+        >
+          <Image
+            src={`/${project.mainImage}`}
+            width={project.imageSize.width}
+            height={project.imageSize.height}
+            alt={`${project.name} project screenshot`}
+            sizes="(max-width: 760px) 100vw, 62vw"
+          />
+        </button>
+      )}
       <div className="project-copy">
         <p className="project-status">{project.status}</p>
         <h3>{project.name}</h3>
@@ -44,9 +56,11 @@ function ProjectRow({ project, index, onOpen }) {
             {project.stack.map((tech) => <li key={tech}>{technologyName(tech)}</li>)}
           </ul>
         )}
-        <button type="button" className="text-action text-action-button" onClick={onOpen}>
-          {work.projectAction} <ArrowIcon />
-        </button>
+        {!project.placeholder && (
+          <button type="button" className="text-action text-action-button" onClick={onOpen}>
+            {work.projectAction} <ArrowIcon />
+          </button>
+        )}
       </div>
     </article>
   );

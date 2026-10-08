@@ -264,4 +264,13 @@ export const projects = [
     ],
     displayOrder: 1,
   },
+  {
+    slug: "coming-soon",
+    name: "More work",
+    status: "Coming soon",
+    description: "A few more works are coming soon.",
+    stack: [],
+    placeholder: true,
+    displayOrder: 2,
+  },
 ];

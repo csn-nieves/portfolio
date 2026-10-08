@@ -5,7 +5,7 @@ import { portfolioContent, projects, technologyNames } from "../../data";
 
 const { contact, person, projectPage } = portfolioContent;
 
-const orderedProjects = [...projects].sort(
+const orderedProjects = projects.filter(({ placeholder }) => !placeholder).sort(
   (a, b) => (a.displayOrder ?? Infinity) - (b.displayOrder ?? Infinity),
 );
 const technologyName = (path) => {
@@ -15,7 +15,7 @@ const technologyName = (path) => {
 
 export async function getStaticPaths() {
   return {
-    paths: projects.map(({ slug }) => ({ params: { slug } })),
+    paths: orderedProjects.map(({ slug }) => ({ params: { slug } })),
     fallback: false,
   };
 }
