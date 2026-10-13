@@ -150,6 +150,7 @@ html:has(.portfolio-site)::-webkit-scrollbar-thumb:active { background: var(--po
 .project-copy h3 { margin: 0 0 18px; font-family: Archivo, sans-serif; font-size: clamp(38px, 3.2vw, 48px); font-weight: 800; letter-spacing: -.055em; line-height: 1.05; }
 .project-copy p { margin: 0; max-width: 36ch; color: var(--portfolio-quiet); font-size: clamp(20px, 1.8vw, 25px); line-height: 1.35; }
 .project-tech { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 24px 0 0; padding: 18px 0 0; border-top: 1px solid var(--portfolio-rule); list-style: none; color: var(--portfolio-quiet); font-family: "IBM Plex Mono", monospace; font-size: 13px; }
+.project-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0 24px; }
 .text-action { display: inline-flex; align-items: center; gap: 14px; min-height: 48px; margin-top: 24px; padding: 0 0 3px; color: var(--portfolio-teal); background: none; border: 0; border-bottom: 2px solid currentColor; font-family: Archivo, sans-serif; font-size: 17px; font-weight: 700; }
 .text-action-button { cursor: pointer; }
 .text-action:active, .contact-link:active, .profile-links a:active, .journey-company:active, .site-footer a:active { transform: translateY(1px); }

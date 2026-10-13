@@ -57,9 +57,16 @@ function ProjectRow({ project, index, onOpen }) {
           </ul>
         )}
         {!project.placeholder && (
-          <button type="button" className="text-action text-action-button" onClick={onOpen}>
-            {work.projectAction} <ArrowIcon />
-          </button>
+          <div className="project-actions">
+            <button type="button" className="text-action text-action-button" onClick={onOpen}>
+              {work.projectAction} <ArrowIcon />
+            </button>
+            {project.url && (
+              <a href={project.url} className="text-action" target="_blank" rel="noopener noreferrer">
+                Visit live app <ArrowIcon />
+              </a>
+            )}
+          </div>
         )}
       </div>
     </article>

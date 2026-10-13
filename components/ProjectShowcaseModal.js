@@ -58,6 +58,11 @@ export default function ProjectShowcaseModal({ project, onClose }) {
         <div className="project-showcase-layout">
           <div className="project-showcase-summary" id="project-showcase-description">
             {project.summaries.map(({ summary }) => <p key={summary}>{summary}</p>)}
+            {project.url && (
+              <a href={project.url} className="text-action" target="_blank" rel="noopener noreferrer">
+                Visit live app <span aria-hidden="true">↗</span>
+              </a>
+            )}
             <div className="project-showcase-stack">
               <h3>Built with</h3>
               <ul>

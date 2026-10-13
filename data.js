@@ -151,6 +151,7 @@ export const projects = [
     status: "In development",
     description:
       "A mobile-first PWA for run clubs to organize groups, plan routes and events, coordinate attendance, and stay connected.",
+    url: "https://flockrun.fit",
     mainImage: "assets/img/projects/flock/flock-detail.png",
     imageSize: { width: 1440, height: 1020 },
     stack: ["react", "typescript", "supabase", "postgresql", "maplibre", "playwright"],
