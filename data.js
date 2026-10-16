@@ -89,7 +89,7 @@ export const portfolioContent = {
         companyUrl: "https://www.fullstackacademy.com/",
         highlights: [
           "Mentored more than 60 students per cohort and 300 overall in data structures, algorithms, architecture, debugging, and clean code; every student under direct mentorship graduated.",
-          "Led lectures on data structures, algorithms, React hooks, PostgreSQL, and Prisma, while reviewing code and guiding teams through architecture and delivery decisions.",
+          "Led lectures on data structures, algorithms, React, Redux, React hooks, PostgreSQL, and Prisma, while reviewing code and guiding teams through architecture and delivery decisions.",
         ],
       },
     ],
@@ -264,14 +264,5 @@ export const projects = [
       },
     ],
     displayOrder: 1,
-  },
-  {
-    slug: "coming-soon",
-    name: "More work",
-    status: "Coming soon",
-    description: "A few more works are coming soon.",
-    stack: [],
-    placeholder: true,
-    displayOrder: 2,
   },
 ];
